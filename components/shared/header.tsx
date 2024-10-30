@@ -14,7 +14,7 @@ export async function Header() {
 				"supports-backdrop-blur:bg-background/90 sticky top-0 z-40 w-full backdrop-blur-lg border-b-2"
 			)}
 		>
-			<div className="container mx-auto flex items-center h-20">
+			<div className="container mx-auto flex items-center h-20 px-6">
 				<div className="flex items-center justify-between flex-1 gap-2">
 					<MobileNav />
 					<div className="w-full flex-1 md:w-auto md:flex-none -mt-1">

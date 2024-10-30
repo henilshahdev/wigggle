@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import "./globals.css";
+import { Header } from "@/components/shared/header";
+import { Footer } from "@/components/shared/footer";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -27,7 +29,11 @@ export default function RootLayout({
 					outfit.className
 				)}
 			>
-				<TooltipProvider>{children}</TooltipProvider>
+				<TooltipProvider>
+					<Header />
+					<main className="flex-1 px-12">{children}</main>
+					<Footer />
+				</TooltipProvider>
 			</body>
 		</html>
 	);
