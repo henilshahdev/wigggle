@@ -28,7 +28,7 @@ export default function RootLayout({
 			<head />
 			<body
 				className={cn(
-					"dark relative min-h-screen w-full h-full flex flex-col justify-center overflow-x-hidden scroll-smooth bg-background text-foreground antialiased",
+					"dark relative min-h-screen w-full h-full flex flex-col justify-center overflow-x-hidden bg-background text-foreground antialiased",
 					outfit.className
 				)}
 			>

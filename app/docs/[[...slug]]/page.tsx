@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { pages } from "~content";
 
 import "@/styles/mdx.css";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { DashboardTableOfContents } from "@/components/shared/toc";
 
 interface DocPageProps {
 	params: {
@@ -32,13 +34,22 @@ const page = async ({ params }: DocPageProps) => {
 	}
 
 	return (
-		<div className="flex flex-col gap-6">
-			<div className="space-y-2">
-				<h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>{doc.title}</h1>
-				{doc.description && <p className="text-base text-muted-foreground">{doc.description}</p>}
+		<div className="flex flex-row gap-6">
+			<div className="flex flex-col">
+				<div className="space-y-2">
+					<h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>{doc.title}</h1>
+					{doc.description && <p className="text-base text-muted-foreground">{doc.description}</p>}
+				</div>
+				<div className="flex flex-col gap-0">
+					<MDXContent code={doc.body} />
+				</div>
 			</div>
-			<div className="flex flex-col gap-0">
-				<MDXContent code={doc.body} />
+			<div className="hidden text-sm xl:block">
+				<div className="sticky top-2">
+					<ScrollArea className="min-w-72">
+						{doc.toc && <DashboardTableOfContents toc={doc.toc} />}
+					</ScrollArea>
+				</div>
 			</div>
 		</div>
 	);

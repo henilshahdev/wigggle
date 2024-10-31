@@ -1,17 +1,9 @@
-[data-rehype-pretty-code-figure] {
-	@apply my-2;
-}
-
-[data-rehype-pretty-code-title] {
-	@apply text-background dark:text-foreground font-semibold bg-zinc-800 dark:bg-muted py-3 px-4 rounded-t-md font-mono border-b-4 dark:border-background;
-}
-
 [data-rehype-pretty-code-figure] pre {
-	@apply bg-zinc-800 dark:bg-muted rounded-b-lg;
+	@apply px-0;
 }
 
 [data-rehype-pretty-code-figure] code {
-	@apply text-sm !leading-loose md:text-base border-0 py-3 bg-zinc-800 dark:bg-muted rounded-b-md;
+	@apply text-sm !leading-loose md:text-base;
 }
 
 [data-rehype-pretty-code-figure] code[data-line-numbers] {
