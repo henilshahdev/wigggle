@@ -17,7 +17,7 @@ const layout = ({ children }: ComponentLayoutProps) => {
 			</ScrollArea>
 			<Separator orientation="vertical" />
 			<ScrollArea className="w-full p-6">
-				<h2 className="text-lg font-semibold mb-4">Middle Column</h2>
+				{/* <h2 className="text-lg font-semibold mb-4">Middle Column</h2>
 				{Array.from({ length: 50 }).map((_, i) => (
 					<Card key={i} className="mb-4">
 						<CardHeader>
@@ -37,7 +37,8 @@ const layout = ({ children }: ComponentLayoutProps) => {
 							<Button size="sm">View</Button>
 						</CardFooter>
 					</Card>
-				))}
+				))} */}
+				{children}
 			</ScrollArea>
 			<Separator orientation="vertical" />
 			<ScrollArea className="w-80 p-6">
