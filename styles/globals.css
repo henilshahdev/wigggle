@@ -66,12 +66,6 @@
 	body {
 		@apply bg-background text-foreground;
 	}
-	.nav-wrapper {
-		@apply max-w-[1400px] mx-auto px-6 md:px-0;
-	}
-	.wrapper {
-		@apply max-w-7xl mx-auto px-6 md:px-0;
-	}
 	.link {
 		@apply text-muted-foreground hover:text-foreground transition-colors duration-300;
 	}

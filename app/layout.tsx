@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import "@/styles/globals.css";
 
 import { cn } from "@/lib/utils";
-import { TooltipProvider } from "@/components/ui/tooltip";
 
-import "./globals.css";
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
+
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -31,7 +32,7 @@ export default function RootLayout({
 			>
 				<TooltipProvider>
 					<Header />
-					<main className="flex-1 px-12">{children}</main>
+					<main className="flex-1 flex flex-col px-12">{children}</main>
 					<Footer />
 				</TooltipProvider>
 			</body>
