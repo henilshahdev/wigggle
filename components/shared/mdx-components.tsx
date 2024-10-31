@@ -1,9 +1,15 @@
+// @ts-nocheck
+"use client";
+
+import { cloneElement, useRef } from "react";
+
 import * as runtime from "react/jsx-runtime";
 import { Accordion, AccordionTrigger, AccordionContent, AccordionItem } from "../ui/accordion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Callout } from "@/components/shared/callout";
 import { Step, Steps } from "@/components/shared/steps";
+import { CopyCode } from "@/components/shared/copy-code";
 
 const sharedComponents = {
 	Accordion,
@@ -48,6 +54,16 @@ const overriddenComponents = {
 			{...props}
 		/>
 	),
+	pre: (props: DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement>) => {
+		const codeRef = useRef<HTMLElement>(null);
+
+		return (
+			<pre className="relative" {...props}>
+				<CopyCode ctx={codeRef} />
+				{cloneElement(props.children as ReactElement, { ref: codeRef })}
+			</pre>
+		);
+	},
 };
 
 // MDXContent component

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+
 import "@/styles/globals.css";
+import "@/styles/mdx.css";
 
 import { cn } from "@/lib/utils";
 

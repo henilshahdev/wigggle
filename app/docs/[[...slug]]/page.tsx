@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 
 import { pages } from "~content";
 
+import "@/styles/mdx.css";
+
 interface DocPageProps {
 	params: {
 		slug: string[];

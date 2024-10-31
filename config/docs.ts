@@ -13,7 +13,7 @@ export const docsConfig: DocsConfig = {
 		},
 		{
 			title: "Components",
-			href: "/components",
+			href: "/docs/components/marquee",
 		},
 		{
 			title: "Widgets",

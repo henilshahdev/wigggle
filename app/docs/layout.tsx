@@ -5,6 +5,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { docsConfig } from "@/config/docs";
 
+import "@/styles/mdx.css";
+
 interface ComponentLayoutProps {
 	children: React.ReactNode;
 }
@@ -16,32 +18,9 @@ const layout = ({ children }: ComponentLayoutProps) => {
 				<DocsSidebarNav items={docsConfig.sidebarNav} />
 			</ScrollArea>
 			<Separator orientation="vertical" />
-			<ScrollArea className="w-full p-6">
-				{/* <h2 className="text-lg font-semibold mb-4">Middle Column</h2>
-				{Array.from({ length: 50 }).map((_, i) => (
-					<Card key={i} className="mb-4">
-						<CardHeader>
-							<CardTitle>Content {i + 1}</CardTitle>
-							<CardDescription>This is a sample content item</CardDescription>
-						</CardHeader>
-						<CardContent>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel
-								consectetur interdum, nisl nunc egestas nunc, vitae tincidunt nisl nunc euismod nunc.
-							</p>
-						</CardContent>
-						<CardFooter className="flex justify-between">
-							<Button variant="outline" size="sm">
-								Edit
-							</Button>
-							<Button size="sm">View</Button>
-						</CardFooter>
-					</Card>
-				))} */}
-				{children}
-			</ScrollArea>
+			<ScrollArea className="w-full p-6">{children}</ScrollArea>
 			<Separator orientation="vertical" />
-			<ScrollArea className="w-80 p-6">
+			<ScrollArea className="w-96 p-6">
 				<h2 className="text-lg font-semibold mb-4">Right Column</h2>
 				{Array.from({ length: 20 }).map((_, i) => (
 					<Card key={i} className="mb-4">
