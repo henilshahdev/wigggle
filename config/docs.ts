@@ -9,7 +9,7 @@ export const docsConfig: DocsConfig = {
 	mainNav: [
 		{
 			title: "Docs",
-			href: "/docs",
+			href: "/docs/introduction",
 		},
 		{
 			title: "Components",
@@ -26,12 +26,12 @@ export const docsConfig: DocsConfig = {
 			items: [
 				{
 					title: "Introduction",
-					href: "/docs",
+					href: "/docs/introduction",
 					items: [],
 				},
 				{
-					title: "Installation",
-					href: "/docs/installation",
+					title: "Theming",
+					href: "/docs/theming",
 					items: [
 						{
 							title: "Next.js",

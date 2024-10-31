@@ -1,23 +1,43 @@
 import { MDXContent } from "@/components/shared/mdx-components";
 import { cn } from "@/lib/utils";
-import { ChevronRightIcon } from "lucide-react";
 import React from "react";
+import { notFound } from "next/navigation";
 
-import { docs } from "~content";
+import { pages } from "~content";
 
-const page = async () => {
+interface DocPageProps {
+	params: {
+		slug: string[];
+	};
+}
+
+async function getDocFromParams({ params }: DocPageProps) {
+	const slug = params.slug?.join("/") || "";
+	const doc = pages.find((doc) => doc.slugAsParams === slug);
+
+	if (!doc) {
+		return null;
+	}
+
+	return doc;
+}
+
+const page = async ({ params }: DocPageProps) => {
+	const doc = await getDocFromParams({ params });
+
+	if (!doc) {
+		notFound();
+	}
+
 	return (
 		<div className="flex flex-col gap-6">
-			<div className="flex items-center space-x-1 text-sm leading-none text-muted-foreground">
-				<div className="truncate">Docs</div>
-				<ChevronRightIcon className="size-4" />
-				<div className="text-foreground">{docs.title}</div>
-			</div>
 			<div className="space-y-2">
-				<h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>{docs.title}</h1>
-				{docs.description && <p className="text-base text-muted-foreground">{docs.description}</p>}
+				<h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>{doc.title}</h1>
+				{doc.description && <p className="text-base text-muted-foreground">{doc.description}</p>}
 			</div>
-			<MDXContent code={docs.body} />
+			<div className="flex flex-col gap-0">
+				<MDXContent code={doc.body} />
+			</div>
 		</div>
 	);
 };
