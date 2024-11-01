@@ -40,15 +40,11 @@ async function getDocFromParams({ params }: DocPageProps) {
 }
 
 const page = async ({ params }: DocPageProps) => {
-	console.log(params.slug);
-
 	const doc = await getDocFromParams({ params });
 
 	if (!doc) {
 		notFound();
 	}
-
-	console.log(doc.body);
 
 	return (
 		<div className="flex flex-row gap-6">
