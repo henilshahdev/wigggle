@@ -15,14 +15,20 @@ interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
 	name: string;
 	align?: "center" | "start" | "end";
 	preview?: boolean;
+	description?: string;
+	type?: "widget" | "example";
 }
 
 export function ComponentPreview({
+	preview = false,
 	name,
+	type,
 	children,
 	className,
+
 	align = "center",
-	preview = false,
+	description,
+
 	...props
 }: ComponentPreviewProps) {
 	const [key, setKey] = React.useState(0);

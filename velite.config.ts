@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import rehypePrettyCode, { type Options } from "rehype-pretty-code";
 import { createHighlighter } from "shiki";
 import rehypeSlug from "rehype-slug";
+import { rehypeComponent } from "@/lib/rehype-component";
 import { defineConfig, defineCollection, s } from "velite";
 
 // Configuring code highlighting
@@ -88,6 +89,7 @@ export default defineConfig({
 	mdx: {
 		rehypePlugins: [
 			rehypeSlug,
+			rehypeComponent,
 			[rehypePrettyCode, prettyCodeOptions],
 			[
 				rehypeAutolinkHeadings,
