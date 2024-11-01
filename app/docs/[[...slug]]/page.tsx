@@ -47,14 +47,16 @@ const page = async ({ params }: DocPageProps) => {
 	}
 
 	return (
-		<div className="flex flex-row gap-6">
-			<div className="flex-1 flex-col">
-				<div className="space-y-2">
-					<h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>{doc.title}</h1>
-					{doc.description && <p className="text-base text-muted-foreground">{doc.description}</p>}
-				</div>
-				<div className="flex flex-col gap-0">
-					<MDXContent code={doc.body} />
+		<main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_300px] py-1 pe-12">
+			<div className="mx-auto w-full min-w-0 pb-16">
+				<div className="flex flex-col">
+					<div className="space-y-2">
+						<h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>{doc.title}</h1>
+						{doc.description && <p className="text-base text-muted-foreground">{doc.description}</p>}
+					</div>
+					<div className="flex flex-col gap-0">
+						<MDXContent code={doc.body} />
+					</div>
 				</div>
 			</div>
 			<div className="hidden text-sm xl:block">
@@ -64,7 +66,7 @@ const page = async ({ params }: DocPageProps) => {
 					</ScrollArea>
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 };
 

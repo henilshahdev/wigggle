@@ -58,12 +58,13 @@ const overriddenComponents = {
 		const codeRef = useRef<HTMLElement>(null);
 
 		return (
-			<pre className="relative" {...props}>
+			<pre className="relative overflow-auto max-h-96 text-wrap" {...props}>
 				<CopyCode ctx={codeRef} />
 				{cloneElement(props.children as ReactElement, { ref: codeRef })}
 			</pre>
 		);
 	},
+
 	Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
 		<Tabs className={cn("relative mt-6 w-full", className)} {...props} />
 	),

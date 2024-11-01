@@ -28,7 +28,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
 	const mounted = useMounted();
 
 	return (
-		<div className="w-full h-full space-y-2 px-6">
+		<div className="w-full h-full space-y-2">
 			<p className="font-medium text-base">On This Page</p>
 			<Tree tree={toc} activeItem={activeHeading} />
 		</div>

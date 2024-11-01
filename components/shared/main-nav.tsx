@@ -11,7 +11,7 @@ export function MainNav() {
 
 	return (
 		<div className="hidden md:flex md:gap-x-6">
-			<nav className="hidden items-center space-x-6 xl:flex">
+			<nav className="hidden items-center space-x-8 xl:flex">
 				{docsConfig.mainNav.map((item) => (
 					<Link
 						key={item.href}

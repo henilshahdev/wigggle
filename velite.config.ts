@@ -1,6 +1,4 @@
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { codeImport } from "remark-code-import";
-import remarkGfm from "remark-gfm";
 import rehypePrettyCode, { type Options } from "rehype-pretty-code";
 import { createHighlighter } from "shiki";
 import rehypeSlug from "rehype-slug";
@@ -9,7 +7,7 @@ import { defineConfig, defineCollection, s } from "velite";
 
 // Configuring code highlighting
 const prettyCodeOptions: Options = {
-	theme: "github-dark-default",
+	theme: "plastic",
 	getHighlighter: (options) =>
 		createHighlighter({
 			...options,

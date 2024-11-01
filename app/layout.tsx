@@ -34,7 +34,7 @@ export default function RootLayout({
 			>
 				<TooltipProvider>
 					<Header />
-					<main className="flex-1 flex flex-col px-12">{children}</main>
+					<main className="flex-1 flex flex-col">{children}</main>
 					<Footer />
 				</TooltipProvider>
 			</body>
