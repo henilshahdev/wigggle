@@ -81,6 +81,11 @@ export const docsConfig: DocsConfig = {
 			title: "Components",
 			items: [
 				{
+					title: "Avatar",
+					href: `/docs/widgets/avatar`,
+					items: [],
+				},
+				{
 					title: "Marquee",
 					href: `/docs/components/marquee`,
 					items: [],

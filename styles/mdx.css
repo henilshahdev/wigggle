@@ -1,5 +1,5 @@
 [data-rehype-pretty-code-figure] pre {
-	@apply px-0;
+	@apply mt-4 px-0 py-3 rounded-lg;
 }
 
 [data-rehype-pretty-code-figure] code {
@@ -32,4 +32,12 @@
 
 [data-rehype-pretty-code-figure] [data-chars-id] {
 	@apply border-b-2 p-1 shadow-none;
+}
+
+.mdx > .steps:first-child > h3:first-child {
+	@apply mt-0;
+}
+
+.steps > h3 {
+	@apply mt-8 mb-4 text-base font-semibold;
 }

@@ -10,15 +10,15 @@ import Link from "next/link";
 import { Callout } from "@/components/shared/callout";
 import { Step, Steps } from "@/components/shared/steps";
 import { CopyCode } from "@/components/shared/copy-code";
+import { ComponentPreview } from "@/components/shared/component-preview";
+import { ComponentSource } from "@/components/shared/component-source";
+import { Tabs, TabsTrigger, TabsContent, TabsList } from "@/components/ui/tabs";
 
 const sharedComponents = {
 	Accordion,
 	AccordionTrigger,
 	AccordionContent,
 	AccordionItem,
-	Callout,
-	Step,
-	Steps,
 };
 
 // parse the Velite generated MDX code into a React component function
@@ -39,7 +39,7 @@ const overriddenComponents = {
 	h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h2
 			className={cn(
-				"font-heading mt-12 scroll-m-6 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0",
+				"font-heading mt-6 scroll-m-6 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0",
 				className
 			)}
 			{...props}
@@ -64,6 +64,35 @@ const overriddenComponents = {
 			</pre>
 		);
 	},
+	Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
+		<Tabs className={cn("relative mt-6 w-full", className)} {...props} />
+	),
+	TabsList: ({ className, ...props }: React.ComponentProps<typeof TabsList>) => (
+		<TabsList
+			className={cn("w-full justify-start rounded-none border-b bg-transparent p-0", className)}
+			{...props}
+		/>
+	),
+	TabsTrigger: ({ className, ...props }: React.ComponentProps<typeof TabsTrigger>) => (
+		<TabsTrigger
+			className={cn(
+				"relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none",
+				className
+			)}
+			{...props}
+		/>
+	),
+	TabsContent: ({ className, ...props }: React.ComponentProps<typeof TabsContent>) => (
+		<TabsContent
+			className={cn("relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold", className)}
+			{...props}
+		/>
+	),
+	Callout,
+	Step,
+	Steps,
+	ComponentPreview,
+	ComponentSource,
 };
 
 // MDXContent component
