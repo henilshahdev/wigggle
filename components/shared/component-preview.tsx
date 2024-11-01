@@ -1,14 +1,15 @@
 "use client";
 
 import * as React from "react";
-// import { Index } from "__registry__";
+import { Index } from "__registry__";
 import { LoaderCircleIcon, RotateCcw } from "lucide-react";
 
-// import { useConfig } from "@/lib/use-config";
+import { useConfig } from "@/hooks/use-config";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ComponentWrapper from "./component-wrapper";
+import { styles } from "@/registry/registry-styles";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
 	name: string;
@@ -25,19 +26,15 @@ export function ComponentPreview({
 	...props
 }: ComponentPreviewProps) {
 	const [key, setKey] = React.useState(0);
-	// const [config] = useConfig();
-	// const index = styles.findIndex((style) => style.name === config.style);
+	const [config] = useConfig();
 
-	console.log(children);
-
+	const index = styles.findIndex((style) => style.name === config.style);
 	const Codes = React.Children.toArray(children) as React.ReactElement[];
 
-	console.log(Codes);
-
-	const Code = `hey hey hey`;
+	const Code = Codes[index];
 
 	const Preview = React.useMemo(() => {
-		const Component = React.lazy(() => import("@/registry/default/wiggle/weather"));
+		const Component = Index[config.style][name]?.component;
 
 		if (!Component) {
 			console.error(`Component with name "${name}" not found in registry.`);

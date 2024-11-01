@@ -1,0 +1,15 @@
+{
+  "name": "weather-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "weather"
+  ],
+  "files": [
+    {
+      "path": "example/weather-demo.tsx",
+      "content": "import React from \"react\";\nimport { CloudIcon, MoveDownIcon, MoveUpIcon } from \"lucide-react\";\n\nconst WeatherCard = () => {\n  return (\n    <>\n      <div className=\"relative flex justify-between items-start size-52 flex-col rounded-3xl border-2 p-6\">\n        <div className=\"w-full h-max flex justify-between items-center\">\n          <p className=\"text-lg font-medium\">Burnaby</p>\n          <CloudIcon fill=\"currentColor\" className=\"size-5\" />\n        </div>\n        <div className=\"w-full flex-1 flex justify-center items-center\">\n          <p className=\"text-5xl -mt-1\">16&deg;</p>\n        </div>\n        <div className=\"w-full flex justify-between items-center text-lg\">\n          <div className=\"w-full h-max flex justify-center items-center\">\n            <MoveUpIcon\n              fill=\"currentColor\"\n              className=\"size-4 mr-1\"\n              strokeWidth={4}\n            />\n            <p>12&deg;</p>\n          </div>\n          <div className=\"w-full flex justify-center items-center\">\n            <MoveDownIcon\n              fill=\"currentColor\"\n              className=\"size-4 mr-1\"\n              strokeWidth={4}\n            />\n            <p>7&deg;</p>\n          </div>\n        </div>\n      </div>\n    </>\n  );\n};\n\nexport default WeatherCard;\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

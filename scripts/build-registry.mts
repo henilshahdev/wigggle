@@ -24,7 +24,7 @@ import { fixImport } from "./fix-imports.mts";
 const REGISTRY_PATH = path.join(process.cwd(), "public/r");
 
 const REGISTRY_INDEX_WHITELIST: z.infer<typeof registryItemTypeSchema>[] = [
-	"registry:ui",
+	"registry:wigggle",
 	"registry:lib",
 	"registry:hook",
 	"registry:theme",
@@ -374,29 +374,6 @@ async function buildStyles(registry: Registry) {
 						sourceFile.getVariableDeclaration("description")?.remove();
 
 						let target = file.target;
-
-						if ((!target || target === "") && item.name.startsWith("v0-")) {
-							const fileName = file.path.split("/").pop();
-							if (
-								file.type === "registry:block" ||
-								file.type === "registry:component" ||
-								file.type === "registry:example"
-							) {
-								target = `components/${fileName}`;
-							}
-
-							if (file.type === "registry:ui") {
-								target = `components/ui/${fileName}`;
-							}
-
-							if (file.type === "registry:hook") {
-								target = `hooks/${fileName}`;
-							}
-
-							if (file.type === "registry:lib") {
-								target = `lib/${fileName}`;
-							}
-						}
 
 						return {
 							path: file.path,

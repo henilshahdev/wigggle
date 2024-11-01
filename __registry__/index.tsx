@@ -29,13 +29,25 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "weather-demo": {
+      name: "weather-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["weather"],
+      files: ["registry/default/example/weather-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/weather-demo.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "use-mobile": {
       name: "use-mobile",
       description: "",
       type: "registry:hook",
       registryDependencies: undefined,
-      files: ["registry/default/hooks/use-mobile.tsx"],
-      component: React.lazy(() => import("@/registry/default/hooks/use-mobile.tsx")),
+      files: ["registry/default/hooks/use-mobile.ts"],
+      component: React.lazy(() => import("@/registry/default/hooks/use-mobile.ts")),
       source: "",
       category: "",
       subcategory: "",
