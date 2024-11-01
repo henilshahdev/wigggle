@@ -19,13 +19,13 @@ const Stock = () => {
 	];
 
 	return (
-		<div className="relative flex-normal items-start size-52 flex-col rounded-3xl border-2 p-6">
-			<div className="w-full h-max flex-between items-start">
-				<div className="w-full h-max flex-start flex-col items-start">
+		<div className="relative flex justify-normal items-start size-52 flex-col rounded-3xl border-2 p-6">
+			<div className="w-full h-max flex justify-between items-start">
+				<div className="w-full h-max flex justify-start flex-col items-start">
 					<p className="font-medium">AAPL</p>
 					<p className="text-xs text-muted-foreground">Apple Inc.</p>
 				</div>
-				<div className="flex-end text-primary">
+				<div className="flex justify-end text-primary">
 					<TrendingUpIcon className="h-4 w-4 mr-1" />
 					<p className="font-medium">1.86%</p>
 				</div>
@@ -58,7 +58,7 @@ const Stock = () => {
 					/>
 				</AreaChart>
 			</div>
-			<div className="w-full h-max flex-end">
+			<div className="w-full h-max flex justify-end">
 				<p className="text-4xl font-medium">$150.57</p>
 			</div>
 		</div>

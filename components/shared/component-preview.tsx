@@ -37,7 +37,7 @@ export function ComponentPreview({
 	const Code = `hey hey hey`;
 
 	const Preview = React.useMemo(() => {
-		const Component = React.lazy(() => import("@/my-code/default/wiggle/WeatherCard"));
+		const Component = React.lazy(() => import("@/registry/default/wiggle/weather"));
 
 		if (!Component) {
 			console.error(`Component with name "${name}" not found in registry.`);
