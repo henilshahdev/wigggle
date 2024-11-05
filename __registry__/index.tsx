@@ -29,13 +29,37 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
-    "weather-demo": {
-      name: "weather-demo",
+    "weather-default": {
+      name: "weather-default",
       description: "",
       type: "registry:example",
       registryDependencies: ["weather"],
-      files: ["registry/default/example/weather-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/weather-demo.tsx")),
+      files: ["registry/default/example/weather-default.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/weather-default.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "weather-rectangle": {
+      name: "weather-rectangle",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["weather"],
+      files: ["registry/default/example/weather-rectangle.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/weather-rectangle.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "weather-large": {
+      name: "weather-large",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["weather"],
+      files: ["registry/default/example/weather-large.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/weather-large.tsx")),
       source: "",
       category: "",
       subcategory: "",
