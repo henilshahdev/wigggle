@@ -16,7 +16,7 @@ export default function WeatherDemo() {
         <SunIcon className="size-4 fill-current" />
       </WidgetHeader>
       <WidgetContent>
-        <p className="text-5xl ">32&deg;</p>
+        <p className="text-4xl">32&deg;</p>
       </WidgetContent>
       <WidgetFooter>
         <div className="w-full h-max flex justify-start items-center">

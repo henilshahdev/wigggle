@@ -1,5 +1,5 @@
 [data-rehype-pretty-code-figure] pre {
-	@apply mt-4 px-0 py-3 rounded-lg;
+	@apply px-0 py-3 rounded-lg;
 }
 
 [data-rehype-pretty-code-figure] code {
@@ -26,7 +26,7 @@
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-chars] {
-	@apply rounded bg-zinc-600/50;
+	@apply rounded-lg bg-zinc-600/50;
 	box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
 }
 

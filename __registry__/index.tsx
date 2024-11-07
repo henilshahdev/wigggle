@@ -5,13 +5,13 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {
   "default": {
-    "weather": {
-      name: "weather",
+    "widget": {
+      name: "widget",
       description: "",
       type: "registry:wigggle",
       registryDependencies: undefined,
-      files: ["registry/default/wigggle/weather.tsx"],
-      component: React.lazy(() => import("@/registry/default/wigggle/weather.tsx")),
+      files: ["registry/default/wigggle/widget.tsx"],
+      component: React.lazy(() => import("@/registry/default/wigggle/widget.tsx")),
       source: "",
       category: "",
       subcategory: "",
