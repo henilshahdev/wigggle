@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ComponentWrapper from "./component-wrapper";
 import { styles } from "@/registry/registry-styles";
+import LoadingWidget from "./LoadingWidget";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
 	name: string;
@@ -78,16 +79,7 @@ export function ComponentPreview({
 				)}
 				<TabsContent value="preview" className="relative rounded-md" key={key}>
 					<ComponentWrapper>
-						<React.Suspense
-							fallback={
-								<div className="flex items-center text-sm text-muted-foreground">
-									<LoaderCircleIcon className="mr-2 size-4 animate-spin" />
-									Loading...
-								</div>
-							}
-						>
-							{Preview}
-						</React.Suspense>
+						<React.Suspense fallback={<LoadingWidget />}>{Preview}</React.Suspense>
 					</ComponentWrapper>
 				</TabsContent>
 				<TabsContent value="code">
