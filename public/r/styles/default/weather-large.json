@@ -1,0 +1,15 @@
+{
+  "name": "weather-large",
+  "type": "registry:example",
+  "registryDependencies": [
+    "weather"
+  ],
+  "files": [
+    {
+      "path": "example/weather-large.tsx",
+      "content": "import * as React from \"react\";\nimport { Widget, WidgetContent, WidgetFooter, WidgetHeader, WidgetTitle } from \"../wigggle/widget\";\nimport { MoveDownIcon, MoveUpIcon, SunIcon } from \"lucide-react\";\n\nexport default function WeatherDemo() {\n\treturn (\n\t\t<Widget size=\"large\" design=\"default\" variant=\"default\">\n\t\t\t<WidgetHeader>\n\t\t\t\t<WidgetTitle>Mumbai</WidgetTitle>\n\t\t\t\t<SunIcon className=\"size-4 fill-current\" />\n\t\t\t</WidgetHeader>\n\t\t\t<WidgetContent>\n\t\t\t\t<p className=\"text-4xl\">32&deg;</p>\n\t\t\t</WidgetContent>\n\t\t\t<WidgetFooter>\n\t\t\t\t<div className=\"w-full h-max flex justify-start items-center\">\n\t\t\t\t\t<MoveUpIcon fill=\"currentColor\" className=\"size-4 mr-1\" strokeWidth={4} />\n\t\t\t\t\t<p>36&deg;</p>\n\t\t\t\t</div>\n\t\t\t\t<div className=\"w-full flex justify-end items-center\">\n\t\t\t\t\t<MoveDownIcon fill=\"currentColor\" className=\"size-4 mr-1\" strokeWidth={4} />\n\t\t\t\t\t<p>28&deg;</p>\n\t\t\t\t</div>\n\t\t\t</WidgetFooter>\n\t\t</Widget>\n\t);\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -16,7 +16,7 @@ export function CodeBlockWrapper({ expandButtonTitle = "View Code", className, c
 	return (
 		<Collapsible open={isOpened} onOpenChange={setIsOpened}>
 			<div className={cn("relative overflow-hidden", className)} {...props}>
-				<CollapsibleContent forceMount className={cn("overflow-hidden", !isOpened && "max-h-72")}>
+				<CollapsibleContent forceMount className={cn("overflow-hidden", !isOpened && "max-h-96")}>
 					<div
 						className={cn(
 							"[&_pre]:my-0 [&_pre]:max-h-[650px] [&_pre]:pb-[100px]",

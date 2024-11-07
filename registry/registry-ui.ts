@@ -2,8 +2,8 @@ import { Registry } from "@/registry/schema";
 
 export const ui: Registry = [
   {
-    name: "weather",
+    name: "widget",
     type: "registry:wigggle",
-    files: ["wigggle/weather.tsx"],
+    files: ["wigggle/widget.tsx"],
   },
 ];

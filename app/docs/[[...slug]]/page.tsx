@@ -47,7 +47,7 @@ const page = async ({ params }: DocPageProps) => {
 	}
 
 	return (
-		<main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_300px] py-1 pe-12">
+		<main className="relative lg:gap-10 py-1 md:pe-12">
 			<div className="mx-auto w-full min-w-0 pb-16">
 				<div className="flex flex-col">
 					<div className="space-y-2">
@@ -59,13 +59,13 @@ const page = async ({ params }: DocPageProps) => {
 					</div>
 				</div>
 			</div>
-			<div className="hidden text-sm xl:block">
+			{/* <div className="hidden text-sm xl:block">
 				<div className="sticky top-2">
 					<ScrollArea className="min-w-72">
 						{doc.toc && <DashboardTableOfContents toc={doc.toc} />}
 					</ScrollArea>
 				</div>
-			</div>
+			</div> */}
 		</main>
 	);
 };

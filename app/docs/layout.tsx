@@ -14,7 +14,7 @@ const layout = ({ children }: ComponentLayoutProps) => {
 			<ScrollArea className="hidden md:block w-80 p-6">
 				<DocsSidebarNav items={docsConfig.sidebarNav} />
 			</ScrollArea>
-			<ScrollArea className="w-full py-6 md:pl-6">{children}</ScrollArea>
+			<ScrollArea className="w-full p-6 px-10 md:px-6">{children}</ScrollArea>
 		</div>
 	);
 };
