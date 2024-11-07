@@ -47,7 +47,7 @@ const page = async ({ params }: DocPageProps) => {
 	}
 
 	return (
-		<main className="relative lg:gap-10  py-1 pe-12">
+		<main className="relative lg:gap-10 py-1 md:pe-12">
 			<div className="mx-auto w-full min-w-0 pb-16">
 				<div className="flex flex-col">
 					<div className="space-y-2">
