@@ -51,10 +51,10 @@ const page = async ({ params }: DocPageProps) => {
 			<div className="mx-auto w-full min-w-0 pb-16">
 				<div className="flex flex-col gap-6">
 					<div className="space-y-2">
-						<h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>{doc.title}</h1>
+						<h1 className={cn("scroll-m-20 text-3xl font-medium tracking-tight")}>{doc.title}</h1>
 						{doc.description && <p className="text-lg text-muted-foreground">{doc.description}</p>}
 					</div>
-					<div className="flex flex-col gap-0">
+					<div className="flex flex-col">
 						<MDXContent code={doc.body} />
 					</div>
 				</div>
