@@ -14,18 +14,17 @@ export async function Header() {
 				"supports-backdrop-blur:bg-background/90 sticky top-0 z-40 w-full backdrop-blur-lg border-b-2"
 			)}
 		>
-			<div className="container mx-auto flex items-center h-20 px-6">
-				<div className="flex items-center justify-between flex-1 gap-2">
+			<div className="w-full lg:container lg:mx-auto flex-center h-20 px-6">
+				<div className="flex-between flex-1 gap-2">
 					<MobileNav />
 					<div className="w-full flex-1 md:w-auto md:flex-none -mt-1">
-						<Link href="/" className="relative flex justify-start items-center space-x-3 max-w-48">
-							<Icons.gitHub className="size-6" />
+						<Link href="/" className="relative flex-center space-x-3 max-w-48 text">
+							<Icons.logo className="size-12" />
 							<span className="text-2xl">{siteConfig.name}</span>
 						</Link>
 					</div>
 					<MainNav />
-
-					<nav className="max-w-48 flex justify-end items-center gap-x-1">
+					<nav className="max-w-48 flex-end gap-x-1">
 						<Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
 							<div
 								className={cn(

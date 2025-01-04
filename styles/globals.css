@@ -82,22 +82,39 @@
 
 @layer base {
 	* {
-		@apply border-border;
+		@apply border-border scroll-smooth;
 	}
 	body {
 		@apply bg-background text-foreground;
 	}
+	.flex-start {
+		@apply flex items-center justify-start;
+	}
+
+	.flex-normal {
+		@apply flex items-center justify-normal;
+	}
+
+	.flex-center {
+		@apply flex items-center justify-center;
+	}
+
+	.flex-between {
+		@apply flex items-center justify-between;
+	}
+
+	.flex-end {
+		@apply flex items-center justify-end;
+	}
 	.link {
-		@apply text-muted-foreground hover:text-foreground transition-colors duration-300;
+		@apply text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors duration-300;
 	}
 	::-webkit-scrollbar {
 		@apply w-2;
 	}
-
 	::-webkit-scrollbar-track {
 		@apply bg-transparent;
 	}
-
 	::-webkit-scrollbar-thumb {
 		@apply bg-muted rounded-full;
 	}

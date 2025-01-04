@@ -57,7 +57,7 @@ export function ComponentPreview({
 	}, [name]);
 
 	return (
-		<div className={cn("relative my-4 flex flex-col space-y-2 lg:max-w-[120ch]", className)} {...props}>
+		<div className={cn("relative mb-4 flex flex-col space-y-2 lg:max-w-[120ch]", className)} {...props}>
 			<Tabs defaultValue="preview" className="relative mr-auto w-full">
 				{!preview && (
 					<div className="flex items-center justify-between pb-3">
