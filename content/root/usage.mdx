@@ -1,0 +1,67 @@
+---
+title: Usage
+description: Basic usage of Wigggle widgets.
+date: 2024-03-06
+published: true
+---
+
+<Callout>
+	Note: Please make sure you have <span className="font-mono text-yellow-400">widget.tsx</span> file setup in your
+	project. Please check the docs [here](/docs/widget-tsx).
+</Callout>
+
+## Basic Example
+
+Here&apos;s a simple example of how to use the Widget:
+
+<ComponentPreview
+	name="basic-example-widget"
+	title="Basic Example"
+	description="A simple widget with header, content and footer."
+/>
+
+## Props
+
+### Widget
+
+| Prop      | Type                               | Description                                                | Default |
+| --------- | ---------------------------------- | ---------------------------------------------------------- | ------- |
+| size      | "square" \| "rectangle" \| "large" | Defines the widget's size.                                 | square  |
+| design    | "default" \| "mumbai"              | Determines the widget's padding and overall design.        | default |
+| variant   | "default" \| "secondary"           | Sets the background and text color scheme.                 | default |
+| className | string                             | Adds addtional custom styles.                              | -       |
+| asChild   | boolean                            | If true, allows the widget to render as a child component. | false   |
+
+### Sub Components
+
+The Header, Title, Content & Footer sub components inherit `React.HTMLAttributes` for their respective elements. You can pass standard HTML attributes like `className`, `style`, or event handlers.
+
+## Customization
+
+### Variants
+
+The `Widget` component provides variants for size, design, and appearance. You can customize these variants using the `widgetVariants` utility:
+
+```tsx {2-4} showLineNumbers
+const customWidget = widgetVariants({
+	size: "large",
+	design: "mumbai",
+	variant: "secondary",
+});
+
+<Widget className={customWidget}>...</Widget>;
+```
+
+## Styling
+
+We use Tailwind CSS for styling. You can override or extend styles by modifying the <span className="font-mono text-yellow-400">widgetVariants</span> or passing additional <span className="font-mono text-yellow-400">className</span> values.
+
+```tsx
+<Widget size="large" className="border-dashed border-primary">
+	...
+</Widget>
+```
+
+### Custom Styled Widget
+
+<ComponentPreview name="custom-styles-widget" title="Custom Styles" description="A simple widget with custom styles." />

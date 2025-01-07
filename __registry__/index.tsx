@@ -29,6 +29,30 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "basic-example-widget": {
+      name: "basic-example-widget",
+      description: "",
+      type: "registry:example",
+      registryDependencies: [""],
+      files: ["registry/default/example/basic-example-widget.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/basic-example-widget.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "custom-styles-widget": {
+      name: "custom-styles-widget",
+      description: "",
+      type: "registry:example",
+      registryDependencies: [""],
+      files: ["registry/default/example/custom-styles-widget.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/custom-styles-widget.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "weather-default": {
       name: "weather-default",
       description: "",

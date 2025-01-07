@@ -23,11 +23,14 @@ export const docsConfig: DocsConfig = {
 				{
 					title: "Introduction",
 					href: "/docs/introduction",
-					items: [],
 				},
 				{
 					title: "Widget.tsx",
 					href: "/docs/widget-tsx",
+				},
+				{
+					title: "Usage",
+					href: "/docs/usage",
 				},
 			],
 		},

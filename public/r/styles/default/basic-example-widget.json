@@ -1,0 +1,15 @@
+{
+  "name": "basic-example-widget",
+  "type": "registry:example",
+  "registryDependencies": [
+    ""
+  ],
+  "files": [
+    {
+      "path": "example/basic-example-widget.tsx",
+      "content": "import { Widget, WidgetContent, WidgetFooter, WidgetHeader, WidgetTitle } from \"../wigggle/widget\";\r\n\r\n<Widget>\r\n\t<WidgetHeader>\r\n\t\t<WidgetTitle>My Widget</WidgetTitle>\r\n\t</WidgetHeader>\r\n\t<WidgetContent>\r\n\t\t<p>This is the main content area.</p>\r\n\t</WidgetContent>\r\n\t<WidgetFooter>\r\n\t\t<button>Action</button>\r\n\t</WidgetFooter>\r\n</Widget>;\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -87,17 +87,23 @@ const overriddenComponents = {
 		);
 	},
 	table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-		<div className="my-6 w-full overflow-y-auto">
-			<table className={cn("relative w-full overflow-hidden border-none text-sm", className)} {...props} />
+		<div className="mt-3 mb-6 w-full overflow-auto rounded-lg border border-border">
+			<table className={cn("my-0 w-full overflow-hidden", className)} {...props} />
 		</div>
 	),
+	thead: ({ className, ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => (
+		<thead
+			className={cn("border-b last:border-b-0 odd:bg-background even:bg-background/50", className)}
+			{...props}
+		/>
+	),
 	tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
-		<tr className={cn("last:border-b-none m-0 border-b", className)} {...props} />
+		<tr className={cn("border-b last:border-b-0 odd:bg-background even:bg-background/50", className)} {...props} />
 	),
 	th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
 		<th
 			className={cn(
-				"px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+				"text-balance border-r border-border bg-neutral-50 px-6 py-3 text-left font-mono text-sm font-semibold tracking-tight text-secondary-foreground last:border-r-0 dark:bg-neutral-950",
 				className
 			)}
 			{...props}
@@ -105,7 +111,10 @@ const overriddenComponents = {
 	),
 	td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
 		<td
-			className={cn("px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right", className)}
+			className={cn(
+				"border-r border-border px-6 py-4 text-sm text-secondary-foreground last:border-r-0 [&[align=center]]:text-center [&[align=right]]:text-right text-wrap",
+				className
+			)}
 			{...props}
 		/>
 	),

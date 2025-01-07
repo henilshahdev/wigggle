@@ -1,0 +1,15 @@
+{
+  "name": "custom-styles-widget",
+  "type": "registry:example",
+  "registryDependencies": [
+    ""
+  ],
+  "files": [
+    {
+      "path": "example/custom-styles-widget.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Widget, WidgetContent, WidgetFooter, WidgetHeader, WidgetTitle } from \"../wigggle/widget\";\nimport { CircleMinusIcon, CirclePlusIcon } from \"lucide-react\";\n\nexport default function WeatherDemo() {\n\tconst items = [\"Item 1\", \"Item 2\", \"Item 3\"];\n\n\treturn (\n\t\t<Widget className=\"border-dashed border-primary\">\n\t\t\t<WidgetHeader>\n\t\t\t\t<WidgetTitle className=\"w-full flex-between\">\n\t\t\t\t\t<CircleMinusIcon />\n\t\t\t\t\t<CirclePlusIcon />\n\t\t\t\t</WidgetTitle>\n\t\t\t</WidgetHeader>\n\t\t\t<WidgetContent>\n\t\t\t\t<ul>\n\t\t\t\t\t{items.map((item, index) => (\n\t\t\t\t\t\t<li key={index}>{item}</li>\n\t\t\t\t\t))}\n\t\t\t\t</ul>\n\t\t\t</WidgetContent>\n\t\t\t<WidgetFooter>\n\t\t\t\t<Button className=\"w-full\" size=\"sm\" variant=\"outline\">\n\t\t\t\t\tSubmit\n\t\t\t\t</Button>\n\t\t\t</WidgetFooter>\n\t\t</Widget>\n\t);\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
