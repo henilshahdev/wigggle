@@ -17,14 +17,14 @@ export async function Header() {
 			<div className="w-full lg:container lg:mx-auto flex-center h-20 px-6">
 				<div className="flex-between flex-1 gap-2">
 					<MobileNav />
-					<div className="w-full flex-1 md:w-auto md:flex-none -mt-1">
-						<Link href="/" className="relative flex-center space-x-3 max-w-48 text">
-							<Icons.logo className="size-12" />
+					<div className="w-full flex-1 md:max-w-48 md:flex-none -mt-1">
+						<Link href="/" className="relative flex-start gap-1 max-w-48 text">
+							<Icons.logo className="size-12 mt-1" />
 							<span className="text-2xl">{siteConfig.name}</span>
 						</Link>
 					</div>
 					<MainNav />
-					<nav className="max-w-48 flex-end gap-x-1">
+					<nav className="w-full max-w-48 flex-end gap-x-1">
 						<Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
 							<div
 								className={cn(

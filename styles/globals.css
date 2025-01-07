@@ -90,19 +90,15 @@
 	.flex-start {
 		@apply flex items-center justify-start;
 	}
-
 	.flex-normal {
 		@apply flex items-center justify-normal;
 	}
-
 	.flex-center {
 		@apply flex items-center justify-center;
 	}
-
 	.flex-between {
 		@apply flex items-center justify-between;
 	}
-
 	.flex-end {
 		@apply flex items-center justify-end;
 	}

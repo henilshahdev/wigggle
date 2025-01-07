@@ -1,0 +1,326 @@
+---
+title: Widget.tsx
+description: The generic widget component that powers all widgets in Wigggle.
+date: 2025-01-01
+published: true
+---
+
+## Overview
+
+The Widget component is a highly customizable, reusable UI building block designed for your custom widgets.
+
+<Callout className="mt-6">
+	Note: If you are using shadcn-ui, you can skip to <span className="text-green-500">Step 8</span>.
+</Callout>
+
+## Setup
+
+<Steps>
+
+<Step>Add Tailwind CSS</Step>
+
+Widgets are styles using Tailwind CSS.
+
+[Please refer the Tailwind Docs.](https://tailwindcss.com/docs/installation)
+
+<Step>Add dependencies</Step>
+
+```bash
+npm install tailwindcss-animate class-variance-authority clsx tailwind-merge lucide-react
+```
+
+-   [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate) - Adds animation utilities for Tailwind CSS.
+-   [class-variance-authority](https://www.npmjs.com/package/class-variance-authority) - Simplifies managing variant-based class utilities.
+-   [clsx](https://www.npmjs.com/package/clsx) - A utility for conditionally combining class names.
+-   [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) - Helps merge Tailwind CSS classes without conflicts.
+-   [lucide-react](https://www.npmjs.com/package/lucide-react) - The icon library we use.
+
+<Step>Configure path aliases</Step>
+
+Configure the path aliases in your <span className="text-yellow-400 font-mono">tsconfig.json</span> file.
+
+```json {3-6} title="tsconfig.json" showLineNumbers
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./*"]
+		}
+	}
+}
+```
+
+<Step>Configure tailwindconfig.js</Step>
+
+Here's what [ShadCN's](https://ui.shadcn.com/docs/installation/manual) <span className="text-yellow-400 font-mono">tsconfig.json</span> file looks like:
+
+```js title="tailwind.config.js"
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+	darkMode: ["class"],
+	content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+	theme: {
+		extend: {
+			colors: {
+				border: "hsl(var(--border))",
+				input: "hsl(var(--input))",
+				ring: "hsl(var(--ring))",
+				background: "hsl(var(--background))",
+				foreground: "hsl(var(--foreground))",
+				primary: {
+					DEFAULT: "hsl(var(--primary))",
+					foreground: "hsl(var(--primary-foreground))",
+				},
+				secondary: {
+					DEFAULT: "hsl(var(--secondary))",
+					foreground: "hsl(var(--secondary-foreground))",
+				},
+				destructive: {
+					DEFAULT: "hsl(var(--destructive))",
+					foreground: "hsl(var(--destructive-foreground))",
+				},
+				muted: {
+					DEFAULT: "hsl(var(--muted))",
+					foreground: "hsl(var(--muted-foreground))",
+				},
+				accent: {
+					DEFAULT: "hsl(var(--accent))",
+					foreground: "hsl(var(--accent-foreground))",
+				},
+				popover: {
+					DEFAULT: "hsl(var(--popover))",
+					foreground: "hsl(var(--popover-foreground))",
+				},
+				card: {
+					DEFAULT: "hsl(var(--card))",
+					foreground: "hsl(var(--card-foreground))",
+				},
+			},
+			borderRadius: {
+				lg: `var(--radius)`,
+				md: `calc(var(--radius) - 2px)`,
+				sm: "calc(var(--radius) - 4px)",
+			},
+		},
+	},
+	plugins: [require("tailwindcss-animate")],
+};
+```
+
+<Step>Configure styles</Step>
+
+Add the following to your <span className="text-yellow-400 font-mono">globals.css</span> file. You can browse more themes at [ShadCN Themes](https://ui.shadcn.com/themes).
+
+```css title="globals.css"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 47.4% 11.2%;
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 47.4% 11.2%;
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 47.4% 11.2%;
+		--primary: 222.2 47.4% 11.2%;
+		--primary-foreground: 210 40% 98%;
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
+		--destructive: 0 100% 50%;
+		--destructive-foreground: 210 40% 98%;
+		--ring: 215 20.2% 65.1%;
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: 224 71% 4%;
+		--foreground: 213 31% 91%;
+		--muted: 223 47% 11%;
+		--muted-foreground: 215.4 16.3% 56.9%;
+		--accent: 216 34% 17%;
+		--accent-foreground: 210 40% 98%;
+		--popover: 224 71% 4%;
+		--popover-foreground: 215 20.2% 65.1%;
+		--border: 216 34% 17%;
+		--input: 216 34% 17%;
+		--card: 224 71% 4%;
+		--card-foreground: 213 31% 91%;
+		--primary: 210 40% 98%;
+		--primary-foreground: 222.2 47.4% 1.2%;
+		--secondary: 222.2 47.4% 11.2%;
+		--secondary-foreground: 210 40% 98%;
+		--destructive: 0 63% 31%;
+		--destructive-foreground: 210 40% 98%;
+		--ring: 216 34% 17%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply font-sans antialiased bg-background text-foreground;
+	}
+}
+```
+
+I generally add a few more classes inside the <span className="font-mono text-red-400">@layer base</span> for my convienence, you can feel free to skip this.
+
+```css {3-20} title="globals.css"
+@layer base {
+	/* Other classes */
+	.flex-start {
+		@apply flex items-center justify-start;
+	}
+	.flex-normal {
+		@apply flex items-center justify-normal;
+	}
+	.flex-center {
+		@apply flex items-center justify-center;
+	}
+	.flex-between {
+		@apply flex items-center justify-between;
+	}
+	.flex-end {
+		@apply flex items-center justify-end;
+	}
+	.link {
+		@apply text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors duration-300;
+	}
+}
+```
+
+<Step>Add a cn helper function</Step>
+
+```ts title="lib/utils.ts" showLineNumbers
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+	return twMerge(clsx(inputs));
+}
+```
+
+<Step>Create a components.json file</Step>
+
+Create a components.json file in the root of your project.
+
+```json title="components.json" showLineNumbers
+{
+	"$schema": "https://ui.shadcn.com/schema.json",
+	"style": "new-york",
+	"rsc": false,
+	"tsx": true,
+	"tailwind": {
+		"config": "tailwind.config.js",
+		"css": "src/index.css",
+		"baseColor": "zinc",
+		"cssVariables": true,
+		"prefix": ""
+	},
+	"aliases": {
+		"components": "@/components",
+		"utils": "@/lib/utils",
+		"ui": "@/components/ui",
+		"lib": "@/lib",
+		"hooks": "@/hooks"
+	},
+	"iconLibrary": "lucide"
+}
+```
+
+<Step>Create a widget.tsx file</Step>
+
+Create a <span className="font-mono text-yellow-400">widget.tsx</span> file inside the widgets or a components folder. I prefer 3 folders inside my components directory:
+
+1. @components/shared - Headers, Footers, Icons, etc.
+2. @components/ui - Buttons, Inputs, Selects, etc.
+3. @components/widgets - Wigggle widgets.
+
+```ts title="@components/widgets/widget.tsx" showLineNumbers
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+
+const widgetVariants = cva("relative flex flex-col border-2 whitespace-nowrap shadow-md rounded-3xl", {
+	variants: {
+		size: {
+			square: "size-48",
+			rectangle: "w-96 h-48",
+			large: "size-96",
+		},
+		design: {
+			default: "p-6",
+			mumbai: "p-4",
+		},
+		variant: {
+			default: "bg-background text-foreground",
+			secondary: "bg-secondary text-secondary-foreground",
+		},
+	},
+	defaultVariants: {
+		size: "square",
+		design: "default",
+		variant: "default",
+	},
+});
+
+export interface WidgetProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof widgetVariants> {
+	asChild?: boolean;
+}
+
+const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(({ className, size, design, variant, ...props }, ref) => (
+	<div ref={ref} className={cn(widgetVariants({ size, design, variant, className }))} {...props} />
+));
+Widget.displayName = "Widget";
+
+const WidgetHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+	({ className, ...props }, ref) => (
+		<div
+			ref={ref}
+			className={cn("flex-none flex justify-between items-start text-semibold", className)}
+			{...props}
+		/>
+	)
+);
+WidgetHeader.displayName = "WidgetHeader";
+
+const WidgetTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
+	({ className, ...props }, ref) => (
+		<h5 ref={ref} className={cn("font-semibold leading-none tracking-tight", className)} {...props} />
+	)
+);
+WidgetTitle.displayName = "WidgetTitle";
+
+const WidgetContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+	({ className, ...props }, ref) => (
+		<div ref={ref} className={cn("flex-1 flex justify-center items-center", className)} {...props} />
+	)
+);
+WidgetContent.displayName = "WidgetContent";
+
+const WidgetFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+	({ className, ...props }, ref) => (
+		<div ref={ref} className={cn("flex-none flex justify-between items-center", className)} {...props} />
+	)
+);
+WidgetFooter.displayName = "WidgetFooter";
+
+export { Widget, WidgetHeader, WidgetTitle, WidgetContent, WidgetFooter, widgetVariants };
+
+```
+
+<Step>That's it</Step>
+
+You can now start adding widgets to your project.
+
+</Steps>

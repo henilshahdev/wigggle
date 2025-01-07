@@ -10,7 +10,7 @@ export function MainNav() {
 	const pathname = usePathname();
 
 	return (
-		<div className="hidden md:flex md:gap-x-6">
+		<div className="hidden w-full md:flex-center md:gap-x-6">
 			<nav className="hidden items-center space-x-8 md:flex">
 				{docsConfig.mainNav.map((item) => (
 					<Link

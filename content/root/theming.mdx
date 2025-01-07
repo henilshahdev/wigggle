@@ -32,3 +32,119 @@ lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlo
 ## Advanced
 
 lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+
+To get started, ensure you have the necessary dependencies installed. This component uses Tailwind CSS and class-variance-authority for styling and utility.
+
+```bash
+npm install class-variance-authority
+```
+
+You should also have a `cn` utility function defined in your project for class name composition. If not, you can use this simple implementation:
+
+```typescript
+export function cn(...classes: (string | undefined)[]): string {
+	return classes.filter(Boolean).join(" ");
+}
+```
+
+## Importing the Component
+
+Import the `Widget` and its subcomponents into your project:
+
+```tsx
+import { Widget, WidgetHeader, WidgetTitle, WidgetContent, WidgetFooter, widgetVariants } from "@/components/Widget";
+```
+
+## Usage
+
+### Basic Example
+
+Here’s a simple example of how to use the `Widget` component:
+
+```tsx
+<Widget size="rectangle" design="default" variant="default">
+	<WidgetHeader>
+		<WidgetTitle>My Widget</WidgetTitle>
+	</WidgetHeader>
+	<WidgetContent>
+		<p>This is the main content area.</p>
+	</WidgetContent>
+	<WidgetFooter>
+		<button>Action</button>
+	</WidgetFooter>
+</Widget>
+```
+
+### Props
+
+#### Widget
+
+The main `Widget` component accepts the following props:
+
+| Prop        | Type       | Description                                                | Default                                             |
+| ----------- | ---------- | ---------------------------------------------------------- | --------------------------------------------------- | -------------------------- | -------- |
+| `size`      | `"square"  | "rectangle"                                                | "large"`                                            | Defines the widget’s size. | `square` |
+| `design`    | `"default" | "mumbai"`                                                  | Determines the widget’s padding and overall design. | `default`                  |
+| `variant`   | `"default" | "secondary"`                                               | Sets the background and text color scheme.          | `default`                  |
+| `className` | `string`   | Adds additional custom styles.                             | -                                                   |
+| `asChild`   | `boolean`  | If true, allows the widget to render as a child component. | `false`                                             |
+
+#### WidgetHeader, WidgetTitle, WidgetContent, WidgetFooter
+
+These subcomponents inherit `React.HTMLAttributes` for their respective elements. You can pass standard HTML attributes like `className`, `style`, or event handlers.
+
+## Customization
+
+### Variants
+
+The `Widget` component provides variants for size, design, and appearance. You can customize these variants using the `widgetVariants` utility:
+
+```tsx
+const customWidget = widgetVariants({
+	size: "large",
+	design: "mumbai",
+	variant: "secondary",
+});
+
+<Widget className={customWidget}>...</Widget>;
+```
+
+### Styling
+
+The component uses Tailwind CSS for styling. You can override or extend styles by modifying the `widgetVariants` or passing additional `className` values.
+
+```tsx
+<Widget size="large" className="border-dashed border-primary">
+	...
+</Widget>
+```
+
+### Example with Dynamic Content
+
+```tsx
+const items = ["Item 1", "Item 2", "Item 3"];
+
+<Widget size="large" design="mumbai" variant="secondary">
+	<WidgetHeader>
+		<WidgetTitle>Dynamic Widget</WidgetTitle>
+	</WidgetHeader>
+	<WidgetContent>
+		<ul>
+			{items.map((item, index) => (
+				<li key={index}>{item}</li>
+			))}
+		</ul>
+	</WidgetContent>
+	<WidgetFooter>
+		<button>Submit</button>
+	</WidgetFooter>
+</Widget>;
+```
+
+## Accessibility
+
+The component’s structure ensures that it’s accessible by default. Use semantic tags like `<h5>` for titles and `<div>` for containers, and provide meaningful content inside each section to maintain accessibility standards.
+
+## Conclusion
+
+The `Widget` component and its subcomponents provide a simple yet powerful way to build modular and customizable UIs. Its flexible API ensures seamless integration with any React application, and the Tailwind-based styling allows for extensive customization. Try it in your project today!

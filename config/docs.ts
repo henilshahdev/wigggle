@@ -26,8 +26,8 @@ export const docsConfig: DocsConfig = {
 					items: [],
 				},
 				{
-					title: "Installation",
-					href: "/docs/installation",
+					title: "Widget.tsx",
+					href: "/docs/widget-tsx",
 				},
 			],
 		},

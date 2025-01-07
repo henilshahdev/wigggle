@@ -12,7 +12,7 @@ export function Callout({
 		<Alert className={cn("bg-muted/50", className)} {...props}>
 			{icon && <span className="mr-4 text-2xl">{icon}</span>}
 			{title && <AlertTitle>{title}</AlertTitle>}
-			<AlertDescription>{children}</AlertDescription>
+			<AlertDescription className="text-base font-normal">{children}</AlertDescription>
 		</Alert>
 	);
 }

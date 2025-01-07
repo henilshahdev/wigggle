@@ -12,6 +12,7 @@ import { Step, Steps } from "@/components/shared/steps";
 import { CopyCode } from "@/components/shared/copy-code";
 import { ComponentPreview } from "@/components/shared/component-preview";
 import { ComponentSource } from "@/components/shared/component-source";
+import { StyleWrapper } from "@/components/shared/style-wrapper";
 import { Tabs, TabsTrigger, TabsContent, TabsList } from "@/components/ui/tabs";
 
 const sharedComponents = {
@@ -58,7 +59,7 @@ const overriddenComponents = {
 		<h6 className={cn("mt-8 scroll-m-20 text-base font-medium tracking-tight", className)} {...props} />
 	),
 	p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-		<p className={cn("leading-7 [&:not(:first-child)]:mt-2", className)} {...props} />
+		<p className={cn("py-2 leading-7 [&:not(:first-child)]:mt-2", className)} {...props} />
 	),
 	ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
 		<ul className={cn("ml-6 list-disc", className)} {...props} />
@@ -67,13 +68,46 @@ const overriddenComponents = {
 		<ol className={cn("ml-6 list-decimal", className)} {...props} />
 	),
 	li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-		<li className={cn("mt-2", className)} {...props} />
+		<li className={cn("mt-2 first:mt-3", className)} {...props} />
 	),
 	a: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
 		<a className={cn("w-max link", className)} {...props} />
 	),
 	Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
 		<Link className={cn("w-max link", className)} {...props} />
+	),
+	pre: (props: DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement>) => {
+		const codeRef = useRef<HTMLElement>(null);
+
+		return (
+			<pre className="mt-6 relative overflow-auto max-h-96 text-wrap" {...props}>
+				<CopyCode ctx={codeRef} />
+				{cloneElement(props.children as ReactElement, { ref: codeRef })}
+			</pre>
+		);
+	},
+	table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
+		<div className="my-6 w-full overflow-y-auto">
+			<table className={cn("relative w-full overflow-hidden border-none text-sm", className)} {...props} />
+		</div>
+	),
+	tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
+		<tr className={cn("last:border-b-none m-0 border-b", className)} {...props} />
+	),
+	th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
+		<th
+			className={cn(
+				"px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+				className
+			)}
+			{...props}
+		/>
+	),
+	td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
+		<td
+			className={cn("px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right", className)}
+			{...props}
+		/>
 	),
 	LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
 		<Link
@@ -84,16 +118,6 @@ const overriddenComponents = {
 			{...props}
 		/>
 	),
-	pre: (props: DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement>) => {
-		const codeRef = useRef<HTMLElement>(null);
-
-		return (
-			<pre className="relative overflow-auto max-h-96 text-wrap" {...props}>
-				<CopyCode ctx={codeRef} />
-				{cloneElement(props.children as ReactElement, { ref: codeRef })}
-			</pre>
-		);
-	},
 	Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
 		<Tabs className={cn("relative mt-6 w-full", className)} {...props} />
 	),
