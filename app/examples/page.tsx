@@ -15,7 +15,11 @@ export default function Page() {
 					<div className="w-full flex flex-col gap-3 items-start px-6">
 						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 items-start sm:mx-auto sm:gap-x-16 gap-y-8">
 							{eachWidgetByCategory.widgets.map((eachWidget) => (
-								<WidgetDemo key={eachWidget} widgetName={eachWidget} />
+								<WidgetDemo
+									key={eachWidget}
+									widgetName={eachWidget}
+									subDirectory={eachWidgetByCategory.category}
+								/>
 							))}
 						</div>
 					</div>

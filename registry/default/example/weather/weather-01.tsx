@@ -1,9 +1,5 @@
 import * as React from "react";
-import {
-  Widget,
-  WidgetContent,
-  WidgetFooter,
-} from "../../../registry/default/wigggle/widget";
+import { Widget, WidgetContent, WidgetFooter } from "../../wigggle/widget";
 import { SunIcon } from "lucide-react";
 
 export default function Weather01() {

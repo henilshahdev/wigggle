@@ -1,5 +1,5 @@
-export async function WidgetDemo({ widgetName }: { widgetName: string }) {
-	const Component = (await import(`../../registry/default/example/${widgetName}`)).default;
+export async function WidgetDemo({ subDirectory, widgetName }: { subDirectory: string; widgetName: string }) {
+	const Component = (await import(`../../registry/default/example/${subDirectory}/${widgetName}`)).default;
 
 	return (
 		<div className="group/item relative flex flex-col gap-1.5">

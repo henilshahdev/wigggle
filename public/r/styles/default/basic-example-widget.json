@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "example/basic-example-widget.tsx",
-      "content": "import { Widget, WidgetContent, WidgetFooter, WidgetHeader, WidgetTitle } from \"../wigggle/widget\";\n\nexport default function BasicExample() {\n\treturn (\n\t\t<Widget>\n\t\t\t<WidgetHeader>\n\t\t\t\t<WidgetTitle>Title</WidgetTitle>\n\t\t\t</WidgetHeader>\n\t\t\t<WidgetContent>\n\t\t\t\t<p>Content</p>\n\t\t\t</WidgetContent>\n\t\t\t<WidgetFooter>\n\t\t\t\t<p>Footer</p>\n\t\t\t</WidgetFooter>\n\t\t</Widget>\n\t);\n}\n",
+      "content": "import {\n  Widget,\n  WidgetContent,\n  WidgetFooter,\n  WidgetHeader,\n  WidgetTitle,\n} from \"../wigggle/widget\";\n\nexport default function BasicExample() {\n  return (\n    <Widget>\n      <WidgetHeader>\n        <WidgetTitle>Title</WidgetTitle>\n      </WidgetHeader>\n      <WidgetContent>\n        <p>Content</p>\n      </WidgetContent>\n      <WidgetFooter>\n        <p>Footer</p>\n      </WidgetFooter>\n    </Widget>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

@@ -5,7 +5,7 @@ import {
   WidgetFooter,
   WidgetHeader,
   WidgetTitle,
-} from "../../../registry/default/wigggle/widget";
+} from "../../wigggle/widget";
 import { DropletIcon, SunIcon, ThermometerIcon } from "lucide-react";
 
 export default function Weather06() {
