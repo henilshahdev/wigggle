@@ -56,7 +56,7 @@ const overriddenComponents = {
   }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
-        'font-heading mt-2 scroll-m-20 text-4xl font-semibold',
+        'font-heading mt-2 scroll-m-6 text-4xl font-semibold',
         className
       )}
       {...props}
@@ -80,7 +80,7 @@ const overriddenComponents = {
   }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className={cn(
-        'font-heading mt-8 scroll-m-20 text-xl font-medium tracking-tight',
+        'font-heading mt-8 scroll-m-6 text-xl font-medium tracking-tight',
         className
       )}
       {...props}
@@ -92,7 +92,7 @@ const overriddenComponents = {
   }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className={cn(
-        'font-heading mt-8 scroll-m-20 text-lg font-medium tracking-tight',
+        'font-heading mt-8 scroll-m-6 text-lg font-medium tracking-tight',
         className
       )}
       {...props}
@@ -104,7 +104,7 @@ const overriddenComponents = {
   }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h5
       className={cn(
-        'mt-8 scroll-m-20 text-lg font-medium tracking-tight',
+        'mt-8 scroll-m-6 text-lg font-medium tracking-tight',
         className
       )}
       {...props}
@@ -116,7 +116,7 @@ const overriddenComponents = {
   }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h6
       className={cn(
-        'mt-8 scroll-m-20 text-base font-medium tracking-tight',
+        'mt-8 scroll-m-6 text-base font-medium tracking-tight',
         className
       )}
       {...props}

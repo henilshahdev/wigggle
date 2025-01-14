@@ -34,16 +34,20 @@ export default function CalendarDemo() {
 
   const meetings = [
     {
-      id: 1,
-      title: 'Weekly Huddle',
+      id: 'm1',
+      title: 'Standup',
       time: '9:00',
     },
     {
-      id: 2,
+      id: 'm2',
       title: 'Intro to V0',
       time: '11:15',
     },
-    { id: 3, title: 'Launch Prep', time: '3:15' },
+    {
+      id: 'm3',
+      title: 'Launch Prep',
+      time: '3:15',
+    },
   ];
 
   return (

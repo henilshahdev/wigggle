@@ -6,11 +6,14 @@ interface ComponentWrapperProps {
   className?: string;
   children: any;
 }
-const ComponentWrapper = ({ className, children }: ComponentWrapperProps) => {
+const ComponentWrapper = ({
+  className,
+  children,
+}: ComponentWrapperProps) => {
   return (
     <div
       className={cn(
-        'max-w-screen relative flex flex-col items-center justify-center rounded-xl bg-background py-16 border md:p-16',
+        'max-w-screen relative flex flex-col items-center justify-center rounded-xl bg-background md:border py-2 md:p-16',
         className
       )}
     >
