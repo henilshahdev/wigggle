@@ -42,6 +42,11 @@ export const docsConfig: DocsConfig = {
 			title: "Widgets",
 			items: [
 				{
+					title: "Clock",
+					href: `/docs/widgets/clock`,
+					items: [],
+				},
+				{
 					title: "Weather",
 					href: `/docs/widgets/weather`,
 					items: [],

@@ -1,0 +1,15 @@
+{
+  "name": "clock-default",
+  "type": "registry:example",
+  "registryDependencies": [
+    "clock"
+  ],
+  "files": [
+    {
+      "path": "docs/clock/clock-default.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Widget, WidgetContent, WidgetTitle } from \"../../wigggle/widget\";\n\nexport default function ClockDemo() {\n\tconst [time, setTime] = React.useState(new Date());\n\n\tReact.useEffect(() => {\n\t\tconst timer = setInterval(() => {\n\t\t\tsetTime(new Date());\n\t\t}, 1000);\n\n\t\treturn () => {\n\t\t\tclearInterval(timer);\n\t\t};\n\t}, []);\n\n\tconst days = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"];\n\tconst day = days[time.getDay()];\n\n\tconst minutes = time.getMinutes();\n\tconst hours = time.getHours() % 12;\n\n\treturn (\n\t\t<Widget>\n\t\t\t<WidgetContent className=\"flex-col gap-2\">\n\t\t\t\t<WidgetTitle className=\"text-2xl\">{day}</WidgetTitle>\n\t\t\t\t<WidgetTitle className=\"text-5xl tracking-widest\">\n\t\t\t\t\t{hours}:{minutes}\n\t\t\t\t</WidgetTitle>\n\t\t\t</WidgetContent>\n\t\t</Widget>\n\t);\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

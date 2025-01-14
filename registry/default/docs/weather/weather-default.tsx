@@ -5,7 +5,7 @@ import {
   WidgetFooter,
   WidgetHeader,
   WidgetTitle,
-} from "../wigggle/widget";
+} from "../../wigggle/widget";
 import { MoveDownIcon, MoveUpIcon, SunIcon } from "lucide-react";
 
 export default function WeatherDemo() {
