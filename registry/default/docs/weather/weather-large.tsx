@@ -1,27 +1,27 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Widget,
   WidgetContent,
   WidgetFooter,
   WidgetHeader,
   WidgetTitle,
-} from "../../wigggle/widget";
-import { MoveDownIcon, MoveUpIcon, SunIcon } from "lucide-react";
+} from '../../wigggle/widget';
+import { MoveDownIcon, MoveUpIcon, SunIcon } from 'lucide-react';
 
 export default function WeatherDemo() {
   const hourlyForecast = [
-    { time: "12 PM", temp: 31 },
-    { time: "1 PM", temp: 31 },
-    { time: "2 PM", temp: 30 },
-    { time: "3 PM", temp: 29 },
-    { time: "4 PM", temp: 28 },
+    { time: '12 PM', temp: 31 },
+    { time: '1 PM', temp: 31 },
+    { time: '2 PM', temp: 30 },
+    { time: '3 PM', temp: 29 },
+    { time: '4 PM', temp: 28 },
   ];
 
   const weeklyForecast = [
-    { day: "Sun", low: 33, high: 27 },
-    { day: "Mon", low: 33, high: 26 },
-    { day: "Tue", low: 32, high: 27 },
-    { day: "Wed", low: 31, high: 25 },
+    { day: 'Sun', low: 33, high: 27 },
+    { day: 'Mon', low: 33, high: 26 },
+    { day: 'Tue', low: 32, high: 27 },
+    { day: 'Wed', low: 31, high: 25 },
   ];
 
   return (

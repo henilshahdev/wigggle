@@ -1,9 +1,7 @@
 {
   "name": "weather-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "weather"
-  ],
+  "registryDependencies": ["weather"],
   "files": [
     {
       "path": "example/weather-demo.tsx",

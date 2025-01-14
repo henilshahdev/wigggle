@@ -1,4 +1,4 @@
-import { Widget, WidgetContent, WidgetTitle } from "../../wigggle/widget";
+import { Widget, WidgetContent, WidgetTitle } from '../../wigggle/widget';
 
 export default function ClockDemo() {
   return (

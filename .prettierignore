@@ -1,0 +1,34 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# Build artifacts
+/.next/
+/build
+/out/
+node_modules/
+.velite/
+
+# misc
+.DS_Store
+*.pem
+
+# env files
+.env*
+
+# debug
+npm-debug.log*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# velite files
+.velite
+
+# todo list
+todo.md

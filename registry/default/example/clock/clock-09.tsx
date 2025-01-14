@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Widget, WidgetContent, WidgetTitle } from "../../wigggle/widget";
+import * as React from 'react';
+import { Widget, WidgetContent, WidgetTitle } from '../../wigggle/widget';
 
 export default function Clock09() {
   return (

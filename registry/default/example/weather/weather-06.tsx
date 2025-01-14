@@ -1,12 +1,12 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Widget,
   WidgetContent,
   WidgetFooter,
   WidgetHeader,
   WidgetTitle,
-} from "../../wigggle/widget";
-import { DropletIcon, SunIcon, ThermometerIcon } from "lucide-react";
+} from '../../wigggle/widget';
+import { DropletIcon, SunIcon, ThermometerIcon } from 'lucide-react';
 
 export default function Weather06() {
   return (

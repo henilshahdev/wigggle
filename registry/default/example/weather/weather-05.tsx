@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Widget,
   WidgetContent,
   WidgetHeader,
   WidgetTitle,
-} from "../../wigggle/widget";
-import { MoveDownIcon, MoveUpIcon, SunIcon } from "lucide-react";
+} from '../../wigggle/widget';
+import { MoveDownIcon, MoveUpIcon, SunIcon } from 'lucide-react';
 
 export default function Weather05() {
   return (

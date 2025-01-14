@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Widget, WidgetContent } from "../../wigggle/widget";
+import * as React from 'react';
+import { Widget, WidgetContent } from '../../wigggle/widget';
 
 export default function Clock05() {
   const [time, setTime] = React.useState(new Date());

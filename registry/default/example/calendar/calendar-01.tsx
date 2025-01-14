@@ -1,30 +1,30 @@
-import { Widget, WidgetContent } from "../../wigggle/widget";
-import { Badge } from "@/components/ui/badge";
+import { Widget, WidgetContent } from '../../wigggle/widget';
+import { Badge } from '@/components/ui/badge';
 
 export default function Calendar01() {
   const today = new Date();
   const dayNames = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
   ];
   const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
 
   return (

@@ -1,18 +1,18 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Widget,
   WidgetContent,
   WidgetFooter,
   WidgetTitle,
-} from "../../wigggle/widget";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+} from '../../wigggle/widget';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 import {
   CircleIcon,
   MessageCircleIcon,
   PhoneIcon,
   VideoIcon,
-} from "lucide-react";
+} from 'lucide-react';
 
 export default function Meeting03() {
   return (

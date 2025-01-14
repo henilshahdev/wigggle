@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { TrendingUpIcon } from "lucide-react";
-import Image from "next/image";
-import React from "react";
+import { TrendingUpIcon } from 'lucide-react';
+import Image from 'next/image';
+import React from 'react';
 import {
   Area,
   AreaChart,
@@ -10,19 +10,19 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from "recharts";
+} from 'recharts';
 // import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
 const Stock = () => {
   // Mock data for the chart
   const chartData = [
-    { time: "9:30", price: 148.5 },
-    { time: "10:00", price: 149.2 },
-    { time: "10:30", price: 149.8 },
-    { time: "11:00", price: 150.1 },
-    { time: "11:30", price: 149.9 },
-    { time: "12:00", price: 150.4 },
-    { time: "12:30", price: 150.25 },
+    { time: '9:30', price: 148.5 },
+    { time: '10:00', price: 149.2 },
+    { time: '10:30', price: 149.8 },
+    { time: '11:00', price: 150.1 },
+    { time: '11:30', price: 149.9 },
+    { time: '12:00', price: 150.4 },
+    { time: '12:30', price: 150.25 },
   ];
 
   return (

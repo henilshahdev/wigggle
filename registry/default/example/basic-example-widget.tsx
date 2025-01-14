@@ -4,7 +4,7 @@ import {
   WidgetFooter,
   WidgetHeader,
   WidgetTitle,
-} from "../wigggle/widget";
+} from '../wigggle/widget';
 
 export default function BasicExample() {
   return (

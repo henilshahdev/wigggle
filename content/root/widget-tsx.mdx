@@ -6,8 +6,9 @@ published: true
 ---
 
 <Callout>
-	Note: Please make sure you have <span className="font-mono text-yellow-400">widget.tsx</span> file setup in your
-	project. Please check the docs [here](/docs/installation).
+  Note: Please make sure you have{' '}
+  <span className="font-mono text-yellow-400">widget.tsx</span> file setup in
+  your project. Please check the docs [here](/docs/installation).
 </Callout>
 
 ## Basic Example
@@ -15,9 +16,9 @@ published: true
 Here&apos;s a simple example of how to use the Widget:
 
 <ComponentPreview
-	name="basic-example-widget"
-	title="Basic Example"
-	description="A simple widget with header, content and footer."
+  name="basic-example-widget"
+  title="Basic Example"
+  description="A simple widget with header, content and footer."
 />
 
 ## Props
@@ -44,9 +45,9 @@ The `Widget` component provides variants for size, design, and appearance. You c
 
 ```tsx {2-4} showLineNumbers
 const customWidget = widgetVariants({
-	size: "large",
-	design: "mumbai",
-	variant: "secondary",
+  size: 'large',
+  design: 'mumbai',
+  variant: 'secondary',
 });
 
 <Widget className={customWidget}>...</Widget>;
@@ -58,10 +59,14 @@ We use Tailwind CSS for styling. You can override or extend styles by modifying 
 
 ```tsx
 <Widget size="large" className="border-dashed border-primary">
-	...
+  ...
 </Widget>
 ```
 
 ### Custom Styled Widget
 
-<ComponentPreview name="custom-styles-widget" title="Custom Styles" description="A simple widget with custom styles." />
+<ComponentPreview
+  name="custom-styles-widget"
+  title="Custom Styles"
+  description="A simple widget with custom styles."
+/>

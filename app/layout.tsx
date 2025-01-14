@@ -1,43 +1,43 @@
-import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import type { Metadata } from 'next';
+import { Outfit } from 'next/font/google';
 
-import "@/styles/globals.css";
-import "@/styles/mdx.css";
+import '@/styles/globals.css';
+import '@/styles/mdx.css';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-import { Header } from "@/components/shared/header";
-import { Footer } from "@/components/shared/footer";
+import { Header } from '@/components/shared/header';
+import { Footer } from '@/components/shared/footer';
 
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { TooltipProvider } from '@/components/ui/tooltip';
 
-const outfit = Outfit({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: "Wigggle",
-	description: "Yet another Component Warehouse but with Widgets.",
+  title: 'Wigggle',
+  description: 'Yet another Component Warehouse but with Widgets.',
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en" suppressHydrationWarning>
-			<head />
-			<body
-				className={cn(
-					"dark relative min-h-screen w-full h-full flex flex-col justify-center overflow-x-hidden bg-background text-foreground antialiased",
-					outfit.className
-				)}
-			>
-				<TooltipProvider>
-					<Header />
-					<main className="flex-1 flex flex-col">{children}</main>
-					<Footer />
-				</TooltipProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body
+        className={cn(
+          'dark relative min-h-screen w-full h-full flex flex-col justify-center overflow-x-hidden bg-background text-foreground antialiased',
+          outfit.className
+        )}
+      >
+        <TooltipProvider>
+          <Header />
+          <main className="flex-1 flex flex-col">{children}</main>
+          <Footer />
+        </TooltipProvider>
+      </body>
+    </html>
+  );
 }

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Widget, WidgetContent, WidgetTitle } from "../../wigggle/widget";
+import * as React from 'react';
+import { Widget, WidgetContent, WidgetTitle } from '../../wigggle/widget';
 
 export default function ClockDemo() {
   const [time, setTime] = React.useState(new Date());
@@ -17,13 +17,13 @@ export default function ClockDemo() {
   }, []);
 
   const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
   ];
   const day = days[time.getDay()];
 

@@ -8,18 +8,18 @@ published: true
 ## Basics
 
 ```ts showLineNumbers title="next.config.js" {3} {11}
-import { withContentlayer } from "next-contentlayer";
+import { withContentlayer } from 'next-contentlayer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
-	images: {
-		domains: ["avatars.githubusercontent.com"],
-	},
-	experimental: {
-		appDir: true,
-		serverComponentsExternalPackages: ["@prisma/client"],
-	},
+  reactStrictMode: true,
+  images: {
+    domains: ['avatars.githubusercontent.com'],
+  },
+  experimental: {
+    appDir: true,
+    serverComponentsExternalPackages: ['@prisma/client'],
+  },
 };
 
 export default withContentlayer(nextConfig);
@@ -43,7 +43,7 @@ You should also have a `cn` utility function defined in your project for class n
 
 ```typescript
 export function cn(...classes: (string | undefined)[]): string {
-	return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 ```
 
@@ -52,7 +52,14 @@ export function cn(...classes: (string | undefined)[]): string {
 Import the `Widget` and its subcomponents into your project:
 
 ```tsx
-import { Widget, WidgetHeader, WidgetTitle, WidgetContent, WidgetFooter, widgetVariants } from "@/components/Widget";
+import {
+  Widget,
+  WidgetHeader,
+  WidgetTitle,
+  WidgetContent,
+  WidgetFooter,
+  widgetVariants,
+} from '@/components/Widget';
 ```
 
 ## Usage
@@ -63,15 +70,15 @@ Here’s a simple example of how to use the `Widget` component:
 
 ```tsx
 <Widget size="rectangle" design="default" variant="default">
-	<WidgetHeader>
-		<WidgetTitle>My Widget</WidgetTitle>
-	</WidgetHeader>
-	<WidgetContent>
-		<p>This is the main content area.</p>
-	</WidgetContent>
-	<WidgetFooter>
-		<button>Action</button>
-	</WidgetFooter>
+  <WidgetHeader>
+    <WidgetTitle>My Widget</WidgetTitle>
+  </WidgetHeader>
+  <WidgetContent>
+    <p>This is the main content area.</p>
+  </WidgetContent>
+  <WidgetFooter>
+    <button>Action</button>
+  </WidgetFooter>
 </Widget>
 ```
 
@@ -101,9 +108,9 @@ The `Widget` component provides variants for size, design, and appearance. You c
 
 ```tsx
 const customWidget = widgetVariants({
-	size: "large",
-	design: "mumbai",
-	variant: "secondary",
+  size: 'large',
+  design: 'mumbai',
+  variant: 'secondary',
 });
 
 <Widget className={customWidget}>...</Widget>;
@@ -115,29 +122,29 @@ The component uses Tailwind CSS for styling. You can override or extend styles b
 
 ```tsx
 <Widget size="large" className="border-dashed border-primary">
-	...
+  ...
 </Widget>
 ```
 
 ### Example with Dynamic Content
 
 ```tsx
-const items = ["Item 1", "Item 2", "Item 3"];
+const items = ['Item 1', 'Item 2', 'Item 3'];
 
 <Widget size="large" design="mumbai" variant="secondary">
-	<WidgetHeader>
-		<WidgetTitle>Dynamic Widget</WidgetTitle>
-	</WidgetHeader>
-	<WidgetContent>
-		<ul>
-			{items.map((item, index) => (
-				<li key={index}>{item}</li>
-			))}
-		</ul>
-	</WidgetContent>
-	<WidgetFooter>
-		<button>Submit</button>
-	</WidgetFooter>
+  <WidgetHeader>
+    <WidgetTitle>Dynamic Widget</WidgetTitle>
+  </WidgetHeader>
+  <WidgetContent>
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  </WidgetContent>
+  <WidgetFooter>
+    <button>Submit</button>
+  </WidgetFooter>
 </Widget>;
 ```
 

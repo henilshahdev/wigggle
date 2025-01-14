@@ -1,13 +1,11 @@
 {
   "name": "weather-default",
   "type": "registry:example",
-  "registryDependencies": [
-    "weather"
-  ],
+  "registryDependencies": ["weather"],
   "files": [
     {
       "path": "docs/weather/weather-default.tsx",
-      "content": "import * as React from \"react\";\nimport {\n  Widget,\n  WidgetContent,\n  WidgetFooter,\n  WidgetHeader,\n  WidgetTitle,\n} from \"../../wigggle/widget\";\nimport { MoveDownIcon, MoveUpIcon, SunIcon } from \"lucide-react\";\n\nexport default function WeatherDemo() {\n  return (\n    <Widget size=\"square\" design=\"default\" variant=\"default\">\n      <WidgetHeader>\n        <WidgetTitle>Mumbai</WidgetTitle>\n        <SunIcon className=\"size-4 fill-current\" />\n      </WidgetHeader>\n      <WidgetContent>\n        <p className=\"text-4xl\">32&deg;</p>\n      </WidgetContent>\n      <WidgetFooter>\n        <div className=\"w-full h-max flex justify-start items-center\">\n          <MoveUpIcon\n            fill=\"currentColor\"\n            className=\"size-4 mr-1\"\n            strokeWidth={4}\n          />\n          <p>36&deg;</p>\n        </div>\n        <div className=\"w-full flex justify-end items-center\">\n          <MoveDownIcon\n            fill=\"currentColor\"\n            className=\"size-4 mr-1\"\n            strokeWidth={4}\n          />\n          <p>28&deg;</p>\n        </div>\n      </WidgetFooter>\n    </Widget>\n  );\n}\n",
+      "content": "import * as React from 'react';\nimport {\n  Widget,\n  WidgetContent,\n  WidgetFooter,\n  WidgetHeader,\n  WidgetTitle,\n} from '../../wigggle/widget';\nimport { MoveDownIcon, MoveUpIcon, SunIcon } from 'lucide-react';\n\nexport default function WeatherDemo() {\n  return (\n    <Widget size=\"square\" design=\"default\" variant=\"default\">\n      <WidgetHeader>\n        <WidgetTitle>Mumbai</WidgetTitle>\n        <SunIcon className=\"size-4 fill-current\" />\n      </WidgetHeader>\n      <WidgetContent>\n        <p className=\"text-4xl\">32&deg;</p>\n      </WidgetContent>\n      <WidgetFooter>\n        <div className=\"w-full h-max flex justify-start items-center\">\n          <MoveUpIcon\n            fill=\"currentColor\"\n            className=\"size-4 mr-1\"\n            strokeWidth={4}\n          />\n          <p>36&deg;</p>\n        </div>\n        <div className=\"w-full flex justify-end items-center\">\n          <MoveDownIcon\n            fill=\"currentColor\"\n            className=\"size-4 mr-1\"\n            strokeWidth={4}\n          />\n          <p>28&deg;</p>\n        </div>\n      </WidgetFooter>\n    </Widget>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

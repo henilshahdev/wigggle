@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
+import React, { useState, useEffect } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
 
 const stories = [
   {
     id: 1,
-    content: "Enjoying a beautiful sunset!",
+    content: 'Enjoying a beautiful sunset!',
   },
   {
     id: 2,
-    content: "Just finished a great workout!",
+    content: 'Just finished a great workout!',
   },
   {
     id: 3,
-    content: "Trying out a new recipe today!",
+    content: 'Trying out a new recipe today!',
   },
   {
     id: 4,
-    content: "Exploring a hidden gem in the city!",
+    content: 'Exploring a hidden gem in the city!',
   },
 ];
 

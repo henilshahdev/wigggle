@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Widget, WidgetContent, WidgetTitle } from "../../wigggle/widget";
-import { MoonIcon, SunIcon } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
+import * as React from 'react';
+import { Widget, WidgetContent, WidgetTitle } from '../../wigggle/widget';
+import { MoonIcon, SunIcon } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
 
 export default function Clock07() {
   return (

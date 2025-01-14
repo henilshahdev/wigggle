@@ -1,13 +1,11 @@
 {
   "name": "custom-styles-widget",
   "type": "registry:example",
-  "registryDependencies": [
-    ""
-  ],
+  "registryDependencies": [""],
   "files": [
     {
       "path": "example/custom-styles-widget.tsx",
-      "content": "import { Button } from \"@/components/ui/button\";\nimport {\n  Widget,\n  WidgetContent,\n  WidgetFooter,\n  WidgetHeader,\n  WidgetTitle,\n} from \"../wigggle/widget\";\nimport { CircleMinusIcon, CirclePlusIcon } from \"lucide-react\";\n\nexport default function WeatherDemo() {\n  const items = [\"Item 1\", \"Item 2\", \"Item 3\"];\n\n  return (\n    <Widget className=\"border-dashed border-primary\">\n      <WidgetHeader>\n        <WidgetTitle className=\"w-full flex-between\">\n          <CircleMinusIcon className=\"hover:cursor-pointer\" />\n          <CirclePlusIcon className=\"hover:cursor-pointer\" />\n        </WidgetTitle>\n      </WidgetHeader>\n      <WidgetContent>\n        <ul>\n          {items.map((item, index) => (\n            <li key={index}>{item}</li>\n          ))}\n        </ul>\n      </WidgetContent>\n      <WidgetFooter>\n        <Button className=\"w-full\" size=\"sm\" variant=\"outline\">\n          Submit\n        </Button>\n      </WidgetFooter>\n    </Widget>\n  );\n}\n",
+      "content": "import { Button } from '@/components/ui/button';\nimport {\n  Widget,\n  WidgetContent,\n  WidgetFooter,\n  WidgetHeader,\n  WidgetTitle,\n} from '../wigggle/widget';\nimport { CircleMinusIcon, CirclePlusIcon } from 'lucide-react';\n\nexport default function WeatherDemo() {\n  const items = ['Item 1', 'Item 2', 'Item 3'];\n\n  return (\n    <Widget className=\"border-dashed border-primary\">\n      <WidgetHeader>\n        <WidgetTitle className=\"w-full flex-between\">\n          <CircleMinusIcon className=\"hover:cursor-pointer\" />\n          <CirclePlusIcon className=\"hover:cursor-pointer\" />\n        </WidgetTitle>\n      </WidgetHeader>\n      <WidgetContent>\n        <ul>\n          {items.map((item, index) => (\n            <li key={index}>{item}</li>\n          ))}\n        </ul>\n      </WidgetContent>\n      <WidgetFooter>\n        <Button className=\"w-full\" size=\"sm\" variant=\"outline\">\n          Submit\n        </Button>\n      </WidgetFooter>\n    </Widget>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

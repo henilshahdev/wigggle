@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Widget, WidgetContent, WidgetTitle } from "../../wigggle/widget";
+import * as React from 'react';
+import { Widget, WidgetContent, WidgetTitle } from '../../wigggle/widget';
 
 export default function Clock02() {
   const [time, setTime] = React.useState(new Date());
@@ -16,7 +16,7 @@ export default function Clock02() {
     };
   }, []);
 
-  const formatTime = (num: number) => String(num).padStart(2, "0");
+  const formatTime = (num: number) => String(num).padStart(2, '0');
 
   const hours = time.getHours() % 12;
   const minutes = formatTime(time.getMinutes());

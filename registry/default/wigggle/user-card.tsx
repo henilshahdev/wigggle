@@ -1,6 +1,6 @@
-import { BadgeCheckIcon } from "lucide-react";
-import Image from "next/image";
-import React from "react";
+import { BadgeCheckIcon } from 'lucide-react';
+import Image from 'next/image';
+import React from 'react';
 
 const UserCard = () => {
   return (

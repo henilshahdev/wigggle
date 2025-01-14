@@ -1,5 +1,5 @@
-import React from "react";
-import { CloudIcon, MoveDownIcon, MoveUpIcon } from "lucide-react";
+import React from 'react';
+import { CloudIcon, MoveDownIcon, MoveUpIcon } from 'lucide-react';
 
 const Weather = () => {
   return (

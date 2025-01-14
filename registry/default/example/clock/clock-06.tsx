@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Widget, WidgetContent } from "../../wigggle/widget";
+import * as React from 'react';
+import { Widget, WidgetContent } from '../../wigggle/widget';
 
 export default function Clock06() {
   const [time, setTime] = React.useState(new Date());
@@ -25,18 +25,18 @@ export default function Clock06() {
   const secondsDegrees = (seconds / 60) * 360;
 
   const romanNumerals = [
-    "XII",
-    "I",
-    "II",
-    "III",
-    "IV",
-    "V",
-    "VI",
-    "VII",
-    "VIII",
-    "IX",
-    "X",
-    "XI",
+    'XII',
+    'I',
+    'II',
+    'III',
+    'IV',
+    'V',
+    'VI',
+    'VII',
+    'VIII',
+    'IX',
+    'X',
+    'XI',
   ];
 
   return (
