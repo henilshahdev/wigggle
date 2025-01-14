@@ -7,7 +7,6 @@
     "dev": "next dev --turbo && velite dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write .",
     "lint": "next lint",
     "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && prettier --log-level silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache"
   },

@@ -5,7 +5,11 @@ import {
   WidgetFooter,
   WidgetTitle,
 } from '../../wigggle/widget';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
   CircleIcon,
@@ -19,7 +23,10 @@ export default function Meeting03() {
     <Widget>
       <WidgetContent className="flex-col gap-2">
         <Avatar className="size-14">
-          <AvatarImage src="https://github.com/henilshahdev.png" alt="@henil" />
+          <AvatarImage
+            src="https://github.com/henilshahdev.png"
+            alt="@henil"
+          />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <WidgetTitle className="flex items-center">

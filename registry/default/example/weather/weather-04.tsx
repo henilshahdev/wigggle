@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { Widget, WidgetContent } from '../../wigggle/widget';
+import {
+  Widget,
+  WidgetContent,
+} from '../../wigggle/widget';
 
 export default function Weather04() {
   return (

@@ -1,10 +1,16 @@
 'use client';
 
 import * as React from 'react';
-import { Widget, WidgetContent, WidgetTitle } from '../../wigggle/widget';
+import {
+  Widget,
+  WidgetContent,
+  WidgetTitle,
+} from '../../wigggle/widget';
 
 export default function ClockDemo() {
-  const [time, setTime] = React.useState(new Date());
+  const [time, setTime] = React.useState(
+    new Date()
+  );
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -27,13 +33,17 @@ export default function ClockDemo() {
   ];
   const day = days[time.getDay()];
 
-  const minutes = time.getMinutes();
   const hours = time.getHours() % 12;
+  const minutes = String(
+    time.getMinutes()
+  ).padStart(2, '0');
 
   return (
     <Widget>
       <WidgetContent className="flex-col gap-2">
-        <WidgetTitle className="text-2xl">{day}</WidgetTitle>
+        <WidgetTitle className="text-2xl">
+          {day}
+        </WidgetTitle>
         <WidgetTitle className="text-5xl tracking-widest">
           {hours}:{minutes}
         </WidgetTitle>

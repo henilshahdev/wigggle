@@ -8,7 +8,10 @@ import {
   WidgetTitle,
 } from '../../wigggle/widget';
 import { Badge } from '@/components/ui/badge';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 
@@ -34,17 +37,32 @@ export default function Calendar03() {
   const month = date.getMonth();
 
   const calendarDays = useMemo(() => {
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const firstDayOfMonth = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(
+      year,
+      month + 1,
+      0
+    ).getDate();
+    const firstDayOfMonth = new Date(
+      year,
+      month,
+      1
+    ).getDay();
     return Array(firstDayOfMonth)
       .fill(null)
-      .concat(Array.from({ length: daysInMonth }, (_, i) => i + 1));
+      .concat(
+        Array.from(
+          { length: daysInMonth },
+          (_, i) => i + 1
+        )
+      );
   }, [year, month]);
 
   const changeMonth = (increment: number) =>
     setDate((prevDate) => {
       const newDate = new Date(prevDate);
-      newDate.setMonth(newDate.getMonth() + increment);
+      newDate.setMonth(
+        newDate.getMonth() + increment
+      );
       return newDate;
     });
 
@@ -90,7 +108,10 @@ export default function Calendar03() {
             </div>
           ))}
           {calendarDays.map((day, index) => (
-            <div key={index} className="text-xs text-muted-foreground">
+            <div
+              key={index}
+              className="text-xs text-muted-foreground"
+            >
               {day && isToday(day) ? (
                 <Badge className="size-4 p-2 flex items-center justify-center">
                   {day}

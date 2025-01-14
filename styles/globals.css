@@ -106,12 +106,12 @@
     @apply text-muted-foreground hover:text-foreground hover:underline underline-offset-4 transition-colors duration-300;
   }
   ::-webkit-scrollbar {
-    @apply w-2;
+    @apply w-2 h-2;
   }
   ::-webkit-scrollbar-track {
     @apply bg-transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted rounded-full;
+    @apply bg-foreground/10 rounded-full;
   }
 }

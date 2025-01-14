@@ -30,7 +30,9 @@ const Stock = () => {
       <div className="w-full h-max flex justify-between items-start">
         <div className="w-full h-max flex justify-start flex-col items-start">
           <p className="font-medium">AAPL</p>
-          <p className="text-xs text-muted-foreground">Apple Inc.</p>
+          <p className="text-xs text-muted-foreground">
+            Apple Inc.
+          </p>
         </div>
         <div className="flex justify-end text-primary">
           <TrendingUpIcon className="h-4 w-4 mr-1" />
@@ -59,7 +61,9 @@ const Stock = () => {
             tickLine={false}
             axisLine={false}
             tickMargin={8}
-            tickFormatter={(value) => value.slice(0, 3)}
+            tickFormatter={(value) =>
+              value.slice(0, 3)
+            }
           />
 
           <Area
@@ -72,7 +76,9 @@ const Stock = () => {
         </AreaChart>
       </div>
       <div className="w-full h-max flex justify-end">
-        <p className="text-4xl font-medium">$150.57</p>
+        <p className="text-4xl font-medium">
+          $150.57
+        </p>
       </div>
     </div>
   );

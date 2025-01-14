@@ -17,10 +17,14 @@ const UserCard = () => {
       </div>
       <div className="flex-1 flex justify-start items-start flex-col">
         <div className="flex justify-start">
-          <p className="text-xl font-medium">Henil Shah</p>
+          <p className="text-xl font-medium">
+            Henil Shah
+          </p>
           <BadgeCheckIcon className="ml-2 size-5 text-blue-500" />
         </div>
-        <p className="text-muted-foreground">henil@gmail.com</p>
+        <p className="text-muted-foreground">
+          henil@gmail.com
+        </p>
       </div>
     </div>
   );

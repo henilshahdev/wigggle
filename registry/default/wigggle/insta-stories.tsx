@@ -1,7 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import React, {
+  useState,
+  useEffect,
+} from 'react';
+import {
+  Card,
+  CardContent,
+} from '@/components/ui/card';
 import Image from 'next/image';
 
 const stories = [
@@ -19,21 +25,28 @@ const stories = [
   },
   {
     id: 4,
-    content: 'Exploring a hidden gem in the city!',
+    content:
+      'Exploring a hidden gem in the city!',
   },
 ];
 
 const InstaStories = () => {
-  const [currentStory, setCurrentStory] = useState(0);
+  const [currentStory, setCurrentStory] =
+    useState(0);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       if (progress < 100) {
-        setProgress((prevProgress) => prevProgress + 1);
+        setProgress(
+          (prevProgress) => prevProgress + 1
+        );
       } else {
         setProgress(0);
-        setCurrentStory((prevStory) => (prevStory + 1) % stories.length);
+        setCurrentStory(
+          (prevStory) =>
+            (prevStory + 1) % stories.length
+        );
       }
     }, 50); // 5 seconds per story (50ms * 100)
 

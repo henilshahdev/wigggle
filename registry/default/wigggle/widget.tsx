@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
+import {
+  cva,
+  type VariantProps,
+} from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const widgetVariants = cva(
@@ -17,7 +20,8 @@ const widgetVariants = cva(
       },
       variant: {
         default: 'bg-background text-foreground',
-        secondary: 'bg-secondary text-secondary-foreground',
+        secondary:
+          'bg-secondary text-secondary-foreground',
       },
     },
     defaultVariants: {
@@ -34,11 +38,30 @@ export interface WidgetProps
   asChild?: boolean;
 }
 
-const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
-  ({ className, size, design, variant, ...props }, ref) => (
+const Widget = React.forwardRef<
+  HTMLDivElement,
+  WidgetProps
+>(
+  (
+    {
+      className,
+      size,
+      design,
+      variant,
+      ...props
+    },
+    ref
+  ) => (
     <div
       ref={ref}
-      className={cn(widgetVariants({ size, design, variant, className }))}
+      className={cn(
+        widgetVariants({
+          size,
+          design,
+          variant,
+          className,
+        })
+      )}
       {...props}
     />
   )
@@ -66,7 +89,10 @@ const WidgetTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h5
     ref={ref}
-    className={cn('font-semibold leading-none tracking-tight', className)}
+    className={cn(
+      'font-semibold leading-none tracking-tight',
+      className
+    )}
     {...props}
   />
 ));
@@ -78,7 +104,10 @@ const WidgetContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex-1 flex justify-center items-center', className)}
+    className={cn(
+      'flex-1 flex justify-center items-center',
+      className
+    )}
     {...props}
   />
 ));
@@ -90,7 +119,10 @@ const WidgetFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex-none flex justify-between items-center', className)}
+    className={cn(
+      'flex-none flex justify-between items-center',
+      className
+    )}
     {...props}
   />
 ));

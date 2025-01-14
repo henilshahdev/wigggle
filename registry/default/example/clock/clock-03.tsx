@@ -9,7 +9,9 @@ import {
 } from '../../wigggle/widget';
 
 export default function Clock03() {
-  const [time, setTime] = React.useState(new Date());
+  const [time, setTime] = React.useState(
+    new Date()
+  );
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -39,7 +41,9 @@ export default function Clock03() {
     <Widget>
       <WidgetContent className="flex-col gap-2">
         <WidgetHeader>
-          <WidgetTitle className="text-2xl">{day}</WidgetTitle>
+          <WidgetTitle className="text-2xl">
+            {day}
+          </WidgetTitle>
         </WidgetHeader>
         <WidgetTitle className="text-5xl tracking-widest">
           {hours}:{minutes}

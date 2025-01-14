@@ -18,7 +18,11 @@ export default function WeatherDemo() {
   ];
 
   return (
-    <Widget size="rectangle" design="default" variant="default">
+    <Widget
+      size="rectangle"
+      design="default"
+      variant="default"
+    >
       <WidgetHeader>
         <WidgetTitle>Mumbai</WidgetTitle>
         <SunIcon className="size-6 fill-current" />
@@ -30,13 +34,25 @@ export default function WeatherDemo() {
       </WidgetContent>
       <WidgetFooter>
         <div className="w-full flex justify-between mt-4">
-          {hourlyForecast.map((forecast, index) => (
-            <div key={index} className="flex flex-col items-center gap-1">
-              <span className="text-sm">{forecast.time}</span>
-              <SunIcon className="size-4" strokeWidth={1.5} />
-              <span className="text-sm font-medium">{forecast.temp}°</span>
-            </div>
-          ))}
+          {hourlyForecast.map(
+            (forecast, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center gap-1"
+              >
+                <span className="text-sm">
+                  {forecast.time}
+                </span>
+                <SunIcon
+                  className="size-4"
+                  strokeWidth={1.5}
+                />
+                <span className="text-sm font-medium">
+                  {forecast.temp}°
+                </span>
+              </div>
+            )
+          )}
         </div>
       </WidgetFooter>
     </Widget>

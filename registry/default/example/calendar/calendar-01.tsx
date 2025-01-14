@@ -1,4 +1,7 @@
-import { Widget, WidgetContent } from '../../wigggle/widget';
+import {
+  Widget,
+  WidgetContent,
+} from '../../wigggle/widget';
 import { Badge } from '@/components/ui/badge';
 
 export default function Calendar01() {
@@ -30,10 +33,18 @@ export default function Calendar01() {
   return (
     <Widget>
       <WidgetContent className="flex flex-col gap-2">
-        <p className="text-muted-foreground">{dayNames[today.getDay()]}</p>
-        <h2 className="text-5xl font-bold">{today.getDate()}</h2>
-        <p className="text-muted-foreground">{monthNames[today.getMonth()]}</p>
-        <Badge variant="outline">{today.getFullYear()}</Badge>
+        <p className="text-muted-foreground">
+          {dayNames[today.getDay()]}
+        </p>
+        <h2 className="text-5xl font-bold">
+          {today.getDate()}
+        </h2>
+        <p className="text-muted-foreground">
+          {monthNames[today.getMonth()]}
+        </p>
+        <Badge variant="outline">
+          {today.getFullYear()}
+        </Badge>
       </WidgetContent>
     </Widget>
   );

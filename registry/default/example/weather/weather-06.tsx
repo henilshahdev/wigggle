@@ -6,14 +6,24 @@ import {
   WidgetHeader,
   WidgetTitle,
 } from '../../wigggle/widget';
-import { DropletIcon, SunIcon, ThermometerIcon } from 'lucide-react';
+import {
+  DropletIcon,
+  SunIcon,
+  ThermometerIcon,
+} from 'lucide-react';
 
 export default function Weather06() {
   return (
-    <Widget size="square" design="default" variant="default">
+    <Widget
+      size="square"
+      design="default"
+      variant="default"
+    >
       <WidgetHeader>
         <WidgetTitle>Mumbai</WidgetTitle>
-        <WidgetTitle className="font-normal">4:04</WidgetTitle>
+        <WidgetTitle className="font-normal">
+          4:04
+        </WidgetTitle>
       </WidgetHeader>
       <WidgetContent>
         <SunIcon className="size-9 text-yellow-500" />

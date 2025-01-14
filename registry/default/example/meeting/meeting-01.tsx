@@ -9,7 +9,11 @@ import { VideoIcon } from 'lucide-react';
 
 export default function Meeting01() {
   return (
-    <Widget size="square" design="default" variant="default">
+    <Widget
+      size="square"
+      design="default"
+      variant="default"
+    >
       <WidgetHeader className="flex-col gap-3">
         <div className="flex justify-start items-center">
           <VideoIcon className="size-6 mr-2" />
@@ -17,7 +21,9 @@ export default function Meeting01() {
         </div>
       </WidgetHeader>
       <WidgetContent className="items-end flex justify-start">
-        <p className="text-3xl font-semibold">09:30 AM</p>
+        <p className="text-3xl font-semibold">
+          09:30 AM
+        </p>
       </WidgetContent>
     </Widget>
   );

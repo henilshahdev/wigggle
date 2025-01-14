@@ -1,10 +1,15 @@
 'use client';
 
 import * as React from 'react';
-import { Widget, WidgetContent } from '../../wigggle/widget';
+import {
+  Widget,
+  WidgetContent,
+} from '../../wigggle/widget';
 
 export default function Clock04() {
-  const [time, setTime] = React.useState(new Date());
+  const [time, setTime] = React.useState(
+    new Date()
+  );
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -20,8 +25,10 @@ export default function Clock04() {
   const minutes = time.getMinutes();
   const seconds = time.getSeconds();
 
-  const hoursDegrees = ((hours + minutes / 60) / 12) * 360;
-  const minutesDegrees = ((minutes + seconds / 60) / 60) * 360;
+  const hoursDegrees =
+    ((hours + minutes / 60) / 12) * 360;
+  const minutesDegrees =
+    ((minutes + seconds / 60) / 60) * 360;
   const secondsDegrees = (seconds / 60) * 360;
 
   return (

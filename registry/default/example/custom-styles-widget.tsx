@@ -6,7 +6,10 @@ import {
   WidgetHeader,
   WidgetTitle,
 } from '../wigggle/widget';
-import { CircleMinusIcon, CirclePlusIcon } from 'lucide-react';
+import {
+  CircleMinusIcon,
+  CirclePlusIcon,
+} from 'lucide-react';
 
 export default function WeatherDemo() {
   const items = ['Item 1', 'Item 2', 'Item 3'];
@@ -27,7 +30,11 @@ export default function WeatherDemo() {
         </ul>
       </WidgetContent>
       <WidgetFooter>
-        <Button className="w-full" size="sm" variant="outline">
+        <Button
+          className="w-full"
+          size="sm"
+          variant="outline"
+        >
           Submit
         </Button>
       </WidgetFooter>

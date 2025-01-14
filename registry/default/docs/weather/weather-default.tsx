@@ -6,11 +6,19 @@ import {
   WidgetHeader,
   WidgetTitle,
 } from '../../wigggle/widget';
-import { MoveDownIcon, MoveUpIcon, SunIcon } from 'lucide-react';
+import {
+  MoveDownIcon,
+  MoveUpIcon,
+  SunIcon,
+} from 'lucide-react';
 
 export default function WeatherDemo() {
   return (
-    <Widget size="square" design="default" variant="default">
+    <Widget
+      size="square"
+      design="default"
+      variant="default"
+    >
       <WidgetHeader>
         <WidgetTitle>Mumbai</WidgetTitle>
         <SunIcon className="size-4 fill-current" />

@@ -6,7 +6,11 @@ import {
   WidgetHeader,
   WidgetTitle,
 } from '../../wigggle/widget';
-import { MoveDownIcon, MoveUpIcon, SunIcon } from 'lucide-react';
+import {
+  MoveDownIcon,
+  MoveUpIcon,
+  SunIcon,
+} from 'lucide-react';
 
 export default function WeatherDemo() {
   const hourlyForecast = [
@@ -25,7 +29,11 @@ export default function WeatherDemo() {
   ];
 
   return (
-    <Widget size="large" design="default" variant="default">
+    <Widget
+      size="large"
+      design="default"
+      variant="default"
+    >
       <WidgetHeader>
         <WidgetTitle>Mumbai</WidgetTitle>
         <SunIcon className="size-6 fill-current" />
@@ -37,32 +45,57 @@ export default function WeatherDemo() {
       </WidgetContent>
       <WidgetFooter className="flex flex-col mt-2 gap-4">
         <div className="w-full flex justify-between">
-          {hourlyForecast.map((forecast, index) => (
-            <div key={index} className="flex flex-col items-center gap-2">
-              <span className="text-sm">{forecast.time}</span>
-              <SunIcon className="size-4" strokeWidth={1.5} />
-              <span className="text-sm font-medium">{forecast.temp}°</span>
-            </div>
-          ))}
+          {hourlyForecast.map(
+            (forecast, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center gap-2"
+              >
+                <span className="text-sm">
+                  {forecast.time}
+                </span>
+                <SunIcon
+                  className="size-4"
+                  strokeWidth={1.5}
+                />
+                <span className="text-sm font-medium">
+                  {forecast.temp}°
+                </span>
+              </div>
+            )
+          )}
         </div>
         <div className="w-full flex flex-col justify-between">
-          {weeklyForecast.map((forecast, index) => (
-            <div
-              key={index}
-              className="h-max grid grid-cols-4 gap-x-8 md:gap-x-12 text-center items-end space-y-2.5"
-            >
-              <p className="text-sm">{forecast.day}</p>
-              <SunIcon className="size-5 mx-auto" strokeWidth={2} />
-              <p className="text-sm font-medium flex items-center gap-1.5">
-                <MoveUpIcon className="size-4" strokeWidth={2} />
-                {forecast.high}°
-              </p>
-              <p className="text-sm font-medium flex items-center gap-1.5">
-                <MoveDownIcon className="size-4" strokeWidth={2} />
-                {forecast.low}°
-              </p>
-            </div>
-          ))}
+          {weeklyForecast.map(
+            (forecast, index) => (
+              <div
+                key={index}
+                className="h-max grid grid-cols-4 gap-x-8 md:gap-x-12 text-center items-end space-y-2.5"
+              >
+                <p className="text-sm">
+                  {forecast.day}
+                </p>
+                <SunIcon
+                  className="size-5 mx-auto"
+                  strokeWidth={2}
+                />
+                <p className="text-sm font-medium flex items-center gap-1.5">
+                  <MoveUpIcon
+                    className="size-4"
+                    strokeWidth={2}
+                  />
+                  {forecast.high}°
+                </p>
+                <p className="text-sm font-medium flex items-center gap-1.5">
+                  <MoveDownIcon
+                    className="size-4"
+                    strokeWidth={2}
+                  />
+                  {forecast.low}°
+                </p>
+              </div>
+            )
+          )}
         </div>
       </WidgetFooter>
     </Widget>

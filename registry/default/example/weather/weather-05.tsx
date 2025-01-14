@@ -5,11 +5,19 @@ import {
   WidgetHeader,
   WidgetTitle,
 } from '../../wigggle/widget';
-import { MoveDownIcon, MoveUpIcon, SunIcon } from 'lucide-react';
+import {
+  MoveDownIcon,
+  MoveUpIcon,
+  SunIcon,
+} from 'lucide-react';
 
 export default function Weather05() {
   return (
-    <Widget size="square" design="default" variant="default">
+    <Widget
+      size="square"
+      design="default"
+      variant="default"
+    >
       <WidgetHeader className="flex-col gap-3">
         <WidgetTitle>Mumbai</WidgetTitle>
         <div className="flex flex-col">
@@ -17,7 +25,9 @@ export default function Weather05() {
             <SunIcon className="size-8 fill-current" />
             <p className="text-4xl">29&deg;</p>
           </div>
-          <p className="text-muted-foreground">Feels Like 28&deg;</p>
+          <p className="text-muted-foreground">
+            Feels Like 28&deg;
+          </p>
         </div>
       </WidgetHeader>
       <WidgetContent className="items-end">

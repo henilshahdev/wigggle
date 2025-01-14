@@ -18,7 +18,9 @@ const ScoreCard = () => {
               width={128}
               height={128}
             />
-            <p className="font-medium">Barcelona</p>
+            <p className="font-medium">
+              Barcelona
+            </p>
           </div>
         </div>
         <div className="flex justify-center items-center gap-4 text-4xl">
@@ -39,7 +41,9 @@ const ScoreCard = () => {
               width={128}
               height={128}
             />
-            <p className="font-medium">Real Betis</p>
+            <p className="font-medium">
+              Real Betis
+            </p>
           </div>
         </div>
       </div>

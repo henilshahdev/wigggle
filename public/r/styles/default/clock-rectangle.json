@@ -1,11 +1,13 @@
 {
   "name": "clock-rectangle",
   "type": "registry:example",
-  "registryDependencies": ["clock"],
+  "registryDependencies": [
+    "clock"
+  ],
   "files": [
     {
       "path": "docs/clock/clock-rectangle.tsx",
-      "content": "import { Widget, WidgetContent, WidgetTitle } from '../../wigggle/widget';\n\nexport default function ClockDemo() {\n  return (\n    <Widget size=\"rectangle\">\n      <WidgetContent className=\"flex-between gap-3\">\n        <div className=\"w-full flex-center flex-col gap-2\">\n          <p className=\"text-muted-foreground\">Mumbai</p>\n          <WidgetTitle className=\"text-2xl\">Tuesday</WidgetTitle>\n          <WidgetTitle className=\"text-5xl tracking-widest\">7:10</WidgetTitle>\n        </div>\n        <div className=\"w-full flex-center flex-col gap-2\">\n          <p className=\"text-muted-foreground\">London</p>\n          <WidgetTitle className=\"text-2xl\">Tuesday</WidgetTitle>\n          <WidgetTitle className=\"text-5xl tracking-widest\">1:40</WidgetTitle>\n        </div>\n      </WidgetContent>\n    </Widget>\n  );\n}\n",
+      "content": "import {\n  Widget,\n  WidgetContent,\n  WidgetTitle,\n} from '../../wigggle/widget';\n\nexport default function ClockDemo() {\n  return (\n    <Widget size=\"rectangle\">\n      <WidgetContent className=\"flex-between gap-3\">\n        <div className=\"w-full flex-center flex-col gap-2\">\n          <p className=\"text-muted-foreground\">\n            Mumbai\n          </p>\n          <WidgetTitle className=\"text-2xl\">\n            Tuesday\n          </WidgetTitle>\n          <WidgetTitle className=\"text-5xl tracking-widest\">\n            7:10\n          </WidgetTitle>\n        </div>\n        <div className=\"w-full flex-center flex-col gap-2\">\n          <p className=\"text-muted-foreground\">\n            London\n          </p>\n          <WidgetTitle className=\"text-2xl\">\n            Tuesday\n          </WidgetTitle>\n          <WidgetTitle className=\"text-5xl tracking-widest\">\n            1:40\n          </WidgetTitle>\n        </div>\n      </WidgetContent>\n    </Widget>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

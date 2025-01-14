@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { Widget, WidgetContent, WidgetTitle } from '../../wigggle/widget';
+import {
+  Widget,
+  WidgetContent,
+  WidgetTitle,
+} from '../../wigggle/widget';
 
 export default function Meeting02() {
   return (
@@ -10,7 +14,9 @@ export default function Meeting02() {
         </WidgetTitle>
         <div className="w-full flex flex-col gap-3 text-sm">
           <div className="py-1.5 px-2 rounded-md border flex justify-between items-center">
-            <p className="text-xs">Weekly Huddle</p>
+            <p className="text-xs">
+              Weekly Huddle
+            </p>
             <p className="font-semibold">9:00</p>
           </div>
           <div className="py-1.5 px-2 rounded-md border flex justify-between items-center">

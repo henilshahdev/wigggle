@@ -1,7 +1,9 @@
 {
   "name": "basic-example-widget",
   "type": "registry:example",
-  "registryDependencies": [""],
+  "registryDependencies": [
+    ""
+  ],
   "files": [
     {
       "path": "example/basic-example-widget.tsx",

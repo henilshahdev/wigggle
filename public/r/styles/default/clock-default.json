@@ -1,11 +1,13 @@
 {
   "name": "clock-default",
   "type": "registry:example",
-  "registryDependencies": ["clock"],
+  "registryDependencies": [
+    "clock"
+  ],
   "files": [
     {
       "path": "docs/clock/clock-default.tsx",
-      "content": "'use client';\n\nimport * as React from 'react';\nimport { Widget, WidgetContent, WidgetTitle } from '../../wigggle/widget';\n\nexport default function ClockDemo() {\n  const [time, setTime] = React.useState(new Date());\n\n  React.useEffect(() => {\n    const timer = setInterval(() => {\n      setTime(new Date());\n    }, 1000);\n\n    return () => {\n      clearInterval(timer);\n    };\n  }, []);\n\n  const days = [\n    'Sunday',\n    'Monday',\n    'Tuesday',\n    'Wednesday',\n    'Thursday',\n    'Friday',\n    'Saturday',\n  ];\n  const day = days[time.getDay()];\n\n  const minutes = time.getMinutes();\n  const hours = time.getHours() % 12;\n\n  return (\n    <Widget>\n      <WidgetContent className=\"flex-col gap-2\">\n        <WidgetTitle className=\"text-2xl\">{day}</WidgetTitle>\n        <WidgetTitle className=\"text-5xl tracking-widest\">\n          {hours}:{minutes}\n        </WidgetTitle>\n      </WidgetContent>\n    </Widget>\n  );\n}\n",
+      "content": "'use client';\n\nimport * as React from 'react';\nimport {\n  Widget,\n  WidgetContent,\n  WidgetTitle,\n} from '../../wigggle/widget';\n\nexport default function ClockDemo() {\n  const [time, setTime] = React.useState(\n    new Date()\n  );\n\n  React.useEffect(() => {\n    const timer = setInterval(() => {\n      setTime(new Date());\n    }, 1000);\n\n    return () => {\n      clearInterval(timer);\n    };\n  }, []);\n\n  const days = [\n    'Sunday',\n    'Monday',\n    'Tuesday',\n    'Wednesday',\n    'Thursday',\n    'Friday',\n    'Saturday',\n  ];\n  const day = days[time.getDay()];\n\n  const hours = time.getHours() % 12;\n  const minutes = String(\n    time.getMinutes()\n  ).padStart(2, '0');\n\n  return (\n    <Widget>\n      <WidgetContent className=\"flex-col gap-2\">\n        <WidgetTitle className=\"text-2xl\">\n          {day}\n        </WidgetTitle>\n        <WidgetTitle className=\"text-5xl tracking-widest\">\n          {hours}:{minutes}\n        </WidgetTitle>\n      </WidgetContent>\n    </Widget>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

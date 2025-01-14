@@ -22,7 +22,8 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 
-interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ComponentPreviewProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
   align?: 'center' | 'start' | 'end';
   preview?: boolean;
@@ -45,16 +46,23 @@ export function ComponentPreview({
   const [key, setKey] = React.useState(0);
   const [config] = useConfig();
 
-  const index = styles.findIndex((style) => style.name === config.style);
-  const Codes = React.Children.toArray(children) as React.ReactElement[];
+  const index = styles.findIndex(
+    (style) => style.name === config.style
+  );
+  const Codes = React.Children.toArray(
+    children
+  ) as React.ReactElement[];
 
   const Code = Codes[index];
 
   const Preview = React.useMemo(() => {
-    const Component = Index[config.style][name]?.component;
+    const Component =
+      Index[config.style][name]?.component;
 
     if (!Component) {
-      console.error(`Component with name "${name}" not found in registry.`);
+      console.error(
+        `Component with name "${name}" not found in registry.`
+      );
       return (
         <p className="text-sm text-muted-foreground">
           Component{' '}
@@ -100,7 +108,11 @@ export function ComponentPreview({
         </SheetContent>
       </Sheet>
       <ComponentWrapper>
-        <React.Suspense fallback={<LoadingWidget />}>{Preview}</React.Suspense>
+        <React.Suspense
+          fallback={<LoadingWidget />}
+        >
+          {Preview}
+        </React.Suspense>
       </ComponentWrapper>
     </div>
   );
