@@ -19,8 +19,8 @@ export async function Header() {
 					<MobileNav />
 					<div className="w-full flex-1 md:max-w-48 md:flex-none -mt-1">
 						<Link href="/" className="relative flex-start gap-1 max-w-48 text">
-							<Icons.logo className="size-12 mt-1" />
-							<span className="text-2xl">{siteConfig.name}</span>
+							<Icons.logo className="size-10 mt-1" />
+							<span className="text-xl">{siteConfig.name}</span>
 						</Link>
 					</div>
 					<MainNav />

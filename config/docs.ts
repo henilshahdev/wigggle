@@ -29,12 +29,12 @@ export const docsConfig: DocsConfig = {
 					href: "/docs/introduction",
 				},
 				{
-					title: "Widget.tsx",
-					href: "/docs/widget-tsx",
+					title: "Installation",
+					href: "/docs/installation",
 				},
 				{
-					title: "Usage",
-					href: "/docs/usage",
+					title: "Widget.tsx",
+					href: "/docs/widget-tsx",
 				},
 			],
 		},

@@ -18,15 +18,15 @@ export function MobileNav() {
 
 	return (
 		<Sheet open={open} onOpenChange={setOpen}>
-			<SheetTrigger className="mr-6" asChild>
+			<SheetTrigger asChild>
 				<Button variant="outline" className="md:hidden w-10 h-10">
 					<MenuIcon />
 					<span className="sr-only">Toggle Menu</span>
 				</Button>
 			</SheetTrigger>
 			<SheetContent side="left" className="pr-0">
-				<SheetTitle className="flex gap-3">
-					<Icons.gitHub className="size-6" />
+				<SheetTitle className="flex gap-x-3">
+					<Icons.logo className="size-7" />
 					Wigggle
 				</SheetTitle>
 				<ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">

@@ -43,7 +43,7 @@ export function DocsSidebarNavItems({ items, pathname, groupId }: DocsSidebarNav
 							href={item.href}
 							onClick={() => {}}
 							className={cn(
-								"relative rounded-md py-2 px-4",
+								"relative rounded-md py-2 px-4 text-base",
 								pathname === item.href ? "font-medium text-foreground" : "text-muted-foreground"
 							)}
 							target={item.external ? "_blank" : ""}

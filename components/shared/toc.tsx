@@ -77,8 +77,6 @@ interface TreeProps {
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
-	console.log(tree);
-
 	return tree?.length ? (
 		<ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
 			{tree.map((item, index) => {
@@ -90,7 +88,6 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
 						>
 							{item.title}
 						</a>
-						{console.log(item)}
 						{item.items?.length ? (
 							<Tree tree={item.items} level={level + 1} activeItem={activeItem} />
 						) : null}
