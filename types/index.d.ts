@@ -11,15 +11,26 @@ export interface NavItem {
   event?: string;
 }
 
-export interface NavItemWithChildren extends NavItem {
+export interface NavItemWithChildren
+  extends NavItem {
   items?: NavItemWithChildren[];
 }
 
 export interface MainNavItem extends NavItem {}
 
-export interface SidebarNavItem extends NavItemWithChildren {}
+export interface SidebarNavItem
+  extends NavItemWithChildren {}
 
 export type DashboardConfig = {
   mainNav: MainNavItem[];
   sidebarNav: SidebarNavItem[];
 };
+
+export interface WidgetCustomizerProps {
+  size: 'square' | 'rectangle' | 'large';
+  design: 'default' | 'mumbai';
+  variant: 'default' | 'secondary';
+  title: string;
+  content: string;
+  footer: string;
+}
