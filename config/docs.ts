@@ -1,4 +1,7 @@
-import { MainNavItem, SidebarNavItem } from '@/types';
+import {
+  MainNavItem,
+  SidebarNavItem,
+} from '@/types';
 
 export type DocsConfig = {
   mainNav: MainNavItem[];
@@ -44,6 +47,11 @@ export const docsConfig: DocsConfig = {
         {
           title: 'Clock',
           href: `/docs/widgets/clock`,
+          items: [],
+        },
+        {
+          title: 'Calendar',
+          href: `/docs/widgets/calendar`,
           items: [],
         },
         {

@@ -49,4 +49,24 @@ export const examples: Registry = [
     registryDependencies: ['clock'],
     files: ['docs/clock/clock-large.tsx'],
   },
+  {
+    name: 'calendar-default',
+    type: 'registry:example',
+    registryDependencies: ['calendar'],
+    files: ['docs/calendar/calendar-default.tsx'],
+  },
+  {
+    name: 'calendar-rectangle',
+    type: 'registry:example',
+    registryDependencies: ['calendar'],
+    files: [
+      'docs/calendar/calendar-rectangle.tsx',
+    ],
+  },
+  {
+    name: 'calendar-large',
+    type: 'registry:example',
+    registryDependencies: ['calendar'],
+    files: ['docs/calendar/calendar-large.tsx'],
+  },
 ];

@@ -125,6 +125,42 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "calendar-default": {
+      name: "calendar-default",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calendar"],
+      files: ["registry/default/docs/calendar/calendar-default.tsx"],
+      component: React.lazy(() => import("@/registry/default/docs/calendar/calendar-default.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "calendar-rectangle": {
+      name: "calendar-rectangle",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calendar"],
+      files: ["registry/default/docs/calendar/calendar-rectangle.tsx"],
+      component: React.lazy(() => import("@/registry/default/docs/calendar/calendar-rectangle.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "calendar-large": {
+      name: "calendar-large",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calendar"],
+      files: ["registry/default/docs/calendar/calendar-large.tsx"],
+      component: React.lazy(() => import("@/registry/default/docs/calendar/calendar-large.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "use-mobile": {
       name: "use-mobile",
       description: "",

@@ -100,11 +100,21 @@ export function ComponentPreview({
           <SheetHeader>
             <SheetTitle>{name}.tsx</SheetTitle>
           </SheetHeader>
-          <div className="mt-3 h-full flex flex-col space-y-4">
-            <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:min-h-[650px] [&_pre]:overflow-auto">
-              {Code}
+          {Code ? (
+            <div className="mt-3 h-full flex flex-col space-y-4">
+              <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:min-h-[650px] [&_pre]:overflow-auto">
+                {Code}
+              </div>
             </div>
-          </div>
+          ) : (
+            <p className="mt-6 text-base text-center text-muted-foreground">
+              Component{' '}
+              <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+                {name}
+              </code>{' '}
+              not found in registry.
+            </p>
+          )}
         </SheetContent>
       </Sheet>
       <ComponentWrapper>
