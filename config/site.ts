@@ -2,10 +2,12 @@ export const siteConfig = {
   name: 'Wigggle',
   url: 'https://wigggle.ui',
   ogImage: 'https://wigggle.ui/og',
-  description: 'Yet another Component Warehouse but with Widgets.',
+  description:
+    'Yet another Component Warehouse but with Widgets.',
   links: {
     twitter: 'https://twitter.com/henil106',
-    github: 'https://github.com/wigggle',
+    github:
+      'https://github.com/henilshahdev/wigggle',
   },
   keywords: [
     'React',

@@ -19,10 +19,6 @@ export const docsConfig: DocsConfig = {
       href: '/docs/widgets/weather',
     },
     {
-      title: 'Examples',
-      href: '/examples',
-    },
-    {
       title: 'Playground',
       href: '/playground',
     },
